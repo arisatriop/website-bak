@@ -1,0 +1,161 @@
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.pl-4,
+.px-4 {
+    padding-left: 1.5rem !important;
+}
+
+.owl-carousel .owl-dots {
+    text-align: center;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    background: #e6e6e6;
+    position: relative;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover,
+.owl-carousel .owl-dots .owl-dot:focus {
+    outline: none !important;
+}
+
+.owl-carousel .owl-dots .owl-dot.active {
+    background: #b3b3b3;
+}
+
+.hotel-img,
+.img,
+.blog-img,
+.user-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.testimony-section {
+    position: relative;
+}
+
+.testimony-section .owl-carousel .owl-stage-outer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+}
+
+.testimony-section .owl-nav {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.testimony-section .owl-nav .owl-prev,
+.testimony-section .owl-nav .owl-next {
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-top: -10px;
+    outline: none !important;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.testimony-section .owl-nav .owl-prev span:before,
+.testimony-section .owl-nav .owl-next span:before {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.2);
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.testimony-section .owl-nav .owl-prev:hover span:before,
+.testimony-section .owl-nav .owl-prev:focus span:before,
+.testimony-section .owl-nav .owl-next:hover span:before,
+.testimony-section .owl-nav .owl-next:focus span:before {
+    color: #000000;
+}
+
+.testimony-section .owl-nav .owl-prev {
+    left: 50%;
+    margin-left: -80px;
+}
+
+.testimony-section .owl-nav .owl-next {
+    right: 50%;
+    margin-right: -80px;
+}
+
+.testimony-section:hover .owl-nav .owl-prev,
+.testimony-section:hover .owl-nav .owl-next {
+    opacity: 1;
+}
+
+.testimony-section:hover .owl-nav .owl-prev {
+    left: 50%;
+    margin-left: -80px;
+}
+
+.testimony-section:hover .owl-nav .owl-next {
+    right: 50%;
+    margin-right: -80px;
+}
+
+.testimony-section .owl-dots {
+    text-align: center;
+}
+
+.testimony-section .owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.testimony-section .owl-dots .owl-dot.active {
+    background: rgb(193, 0, 0);
+}
+
+.testimony-wrap .user-img {
+    border-radius: 50%;
+    position: relative;
+}
+
+.testimony-wrap .text {
+    width: calc(100% - 90px);
+    position: relative;
+}
+
+.testimony-wrap .quote {
+    position: absolute;
+    opacity: 1;
+}
+
+.testimony-wrap .quote i {
+    font-size: 40px;
+    color: grey;
+}
+
+.testimony-wrap .name {
+    color: rgb(193, 0, 0);
+    font-weight: 700;
+}
+
+.testimony-wrap .position {
+    color: grey;
+}

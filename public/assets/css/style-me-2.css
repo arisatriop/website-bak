@@ -1,0 +1,43 @@
+.jumbotron {
+    margin: 25px;
+}
+
+.section {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.satu {
+    color: rgb(139, 0, 0);
+    font-weight: 700;
+    font-family: 'Patua One', cursive;
+}
+
+.dua {
+    color: black;
+}
+
+.media {
+    border-radius: 10px;
+}
+.add-items {
+    display: grid;
+    justify-content: center;
+}
+
+.media-body {
+    display: grid;
+}
+
+.media-body .user {
+    display: grid;
+    align-items: flex-end;
+}
+
+.testimoni {
+    display: flex;
+    align-items: flex-end;
+}
+
