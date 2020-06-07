@@ -34,7 +34,7 @@ class TestimoniesController extends Controller
         if ($request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $testimonials->avatar = $filename;
         } else {
@@ -97,7 +97,7 @@ class TestimoniesController extends Controller
         if ($request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $testimonials->avatar = $filename;
         } else {

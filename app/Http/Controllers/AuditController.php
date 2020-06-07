@@ -24,7 +24,7 @@ class AuditController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $person->image = $filename;
         } else {
@@ -48,7 +48,7 @@ class AuditController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $person->image = $filename;
         } else {

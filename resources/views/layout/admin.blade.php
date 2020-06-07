@@ -13,10 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script> --}}
+    {{-- <script src="https://use.fontawesome.com/cbb767562a.js"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
 
     <!-- CSS -->
     <link href="assets/css/style-me-2.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/all.min.css"/>
 
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -114,10 +118,19 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Gallery</span></a>
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseGallery" aria-expanded="false" aria-controls="collapseGallery">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Gallery</span>
+                </a>
+                <div id="collapseGallery" class="collapse" aria-labelledby="headingGallery" data-parent="#accordionSidebar"
+                    style="">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{'/admin-gallery-photo'}}">Photos</a>
+                        <a class="collapse-item" href="{{'/admin-gallery-album'}}">Album</a>
+                    </div>
+                </div>
             </li>
+
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -126,7 +139,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin-panduan">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>User Guide</span>
                 </a>
@@ -240,22 +253,22 @@
     <script src="assets/js/sb-admin-2.min.js"></script>
 
     <script type="text/javascript">
-                        const rileFileBtn = document.getElementById("real-file");
-                        const customBtn = document.getElementById("custom-button");
-                        const customTxt = document.getElementById("custom-text");
+        const realFileBtn = document.getElementById("real-file");
+        const customBtn = document.getElementById("custom-button");
+        const customTxt = document.getElementById("custom-text");
 
-                        customBtn.addEventListener("click", function() {
-                            realFileBtn.click();
-                        });
+        customBtn.addEventListener("click", function() {
+            realFileBtn.click();
+        });
 
-                        realFileBtn.addEventListener("change", function() {
-                            if (realFileBtn.value) {
-                                customTxt.innerHTML = realFileBtn.value.match();
-                            } else {
-                                customTxt.innerHTML = "No File Choosen.";
-                            }
-                        })
-                    </script>
+        realFileBtn.addEventListener("change", function() {
+            if (realFileBtn.value) {
+                customTxt.innerHTML = realFileBtn.value.match();
+            } else {
+                customTxt.innerHTML = "No File Choosen.";
+            }
+        })
+    </script>
 
 </body>
 </html>

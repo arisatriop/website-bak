@@ -27,7 +27,7 @@ class ArticleController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $article->image = $filename;
         } else {
@@ -37,7 +37,37 @@ class ArticleController extends Controller
 
         $article->save();
         return redirect('/admin-article')->with('sukses', 'Artikel berhasil ditambahkan');
-        
+    }
+
+    public function update(Request $request, $id) 
+    {
+        $article = Article::find($id);
+        $article->title = $request->input('title');
+        $article->author = $request->input('author');
+        $article->image = $request->input('image');
+        $article->content = $request->input('content');
+        $article->date = Carbon::now();
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(0, 99999999) . '.' . $extension;
+            $file->move('uploads/home_images/', $filename);
+            $article->image = $filename;
+        } else {
+            $article->image = '';
+            return redirect('/admin-article')->with('gagal', 'data tidak boleh kosong');
+        }
+
+        $article->save();
+        return redirect('/admin-article')->with('sukses_update', 'Artikel berhasil diupdate');
+    }
+
+    public function destroy($id) {
+        $article = Article::find($id);
+        $article->delete($article);
+        $data = $article->title;
+        return redirect('/admin-article')->with('sukses_delete', $data);
     }
     
 }

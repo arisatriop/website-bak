@@ -1,6 +1,6 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +13,8 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('admin.dashboard');
-// });
-
 Route::get('/', function () {
-    return view('numpang');
+    return view('admin.dashboard');
 });
 
 // Route::get('/', function () {
@@ -75,9 +71,22 @@ Route::get('/admin-about/delete-misi/{id}', 'AboutController@destroyMisi');
 
 Route::get('/admin-article', 'ArticleController@index');
 Route::post('/admin-article/add-article', 'ArticleController@create');
+Route::post('/admin-article/update/{id}', 'ArticleController@update');
+Route::get('/admin-article/delete/{id}', 'ArticleController@destroy');
 
 
 Route::get('/admin-event', 'EventController@index');
 Route::post('/admin-event/add-event', 'EventController@create');
 Route::post('/admin-event/update/{id}', 'EventController@update');
-Route::get('admin-event/edlete/{id}', 'EventController@destroy');
+Route::get('admin-event/delete/{id}', 'EventController@destroy');
+
+Route::get('/admin-gallery-photo', 'PhotoController@index');
+Route::post('/admin-gallery-photo/create', 'PhotoController@create');
+Route::get('/admin-gallery-photo/delete/{id}', 'PhotoController@delete');
+
+Route::get('/admin-gallery-album', 'AlbumController@index');
+Route::post('/admin-gallery-album/create', 'AlbumController@create');
+Route::get('/admin-gallery-album/delete/{id}/{album_name}', 'AlbumController@delete');
+
+
+Route::get('/admin-panduan', 'PanduanController@index');

@@ -13,12 +13,22 @@
                 {{session('sukses')}}
             </div>    
         @endif
+        @if (session('sukses_update'))
+            <div class="alert alert-success" role="alert">
+                {{session('sukses_update')}}
+            </div>    
+        @endif
+        @if (session('sukses_delete'))
+            <div class="alert alert-danger" role="alert">
+                Artikel '{{session('sukses_delete')}}' telah dihapus.
+            </div>    
+        @endif
         <div class="section mb-5">
             
             <div class="row col-12 justify-content-center mb-4 pt-2">
                 <h2 style="color: rgb(139, 0, 0)" class="font-weight-bold">Article</h2>
             </div>
-            <div class="d-flex justify-content-between flex-wrap">
+            <div class="d-flex justify-content-around flex-wrap">
                 {{-- Add Article --}}
                 <div class="d-flex flex-wrap ">
                     <a href="" type="button" class="mt-1 text-decoration-none" data-toggle="modal" data-target="#add-article">
@@ -37,7 +47,7 @@
                     
                 {{-- Article Items --}}
                 <a href="" type="button" class="mb-5 text-decoration-none" data-toggle="modal" data-target="#item-{{$a->id}}">
-                    <div class="d-flex flex-wrap">
+                    <div class="d-flex justify-content-center flex-wrap">
                         <div class="card shadow-lg" style="width: 15rem; height:15rem">
                             <img src="{{asset('uploads/home_images/' . $a->image)}}" class="card-img-top" height="150px" alt="...">
                             <div class="card-body text-center mb-2">
@@ -61,36 +71,63 @@
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form>
-                            <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Title</label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="judul artikel" name="title" value="{{$a->title}}">
-                                    </div>
-                                    <div class="form-group d-flex">
-                                        <div class="form-group col-6 ml-n2">
-                                            <label for="exampleFormControlInput1">Author</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="penulis" name="author" value="{{$a->author}}">
+                            <form action="/admin-article/update/{{$a->id}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Title</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="judul artikel" name="title" value="{{$a->title}}" required>
                                         </div>
-                                        <div class="form-group col-6">
-                                            <label for="exampleFormControlFile1">Choose file for edit image</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                                        <div class="form-group d-flex">
+                                            <div class="form-group col-6 ml-n2">
+                                                <label for="exampleFormControlInput1">Author</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="penulis" name="author" value="{{$a->author}}" required>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label for="exampleFormControlFile1">Choose file for edit image</label>
+                                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Article</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content">{{$a->content}}</textarea>
-                                    </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="delete" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Article</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" required>{{$a->content}}</textarea>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-danger" href="#" role="button" data-toggle="modal" data-target="#delete-article-{{$a->id}}">Delete</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
                             </form>
                         </div>
                     </div>
+                    {{-- Modal Delete Article --}}
+                    <form action="/admin-article/delete/{{$a->id}}">
+                        <div class="modal fade" id="delete-article-{{$a->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete Article</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="alert alert-danger" role="alert">
+                                        Anda akan menghapus '{{$a->title}}' dari daftar event?
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
+                
 
                 @endforeach
 
@@ -107,25 +144,27 @@
                             <h5 class="modal-title" id="staticBackdropLabel">Add Article</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                            </button>
+                            </button> 
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Title</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="judul artikel" name="title" value="">
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="judul artikel" name="title" value="" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Author</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="penulis" name="author" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlFile1">Image</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                                <div class="form-group d-flex">
+                                    <div class="form-group col-6 ml-n2">
+                                        <label for="exampleFormControlInput1">Author</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="penulis" name="author" value="" required>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="exampleFormControlFile1">Image</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Article</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" required></textarea>
                                 </div>
                             </form>
                         </div>

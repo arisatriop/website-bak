@@ -26,7 +26,7 @@ class EventController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $event->image = $filename;
         } else {
@@ -49,7 +49,7 @@ class EventController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = rand(0, 99999999) . '.' . $extension;
             $file->move('uploads/home_images/', $filename);
             $event->image = $filename;
         } else {
@@ -58,14 +58,15 @@ class EventController extends Controller
         }
 
         $event->save();
-        return redirect('/admin-event')->with('sukses', 'Event berhasil diupdate');
+        return redirect('/admin-event')->with('sukses_update', 'Event berhasil diupdate');
     }
 
     public function destroy($id) 
     {
         $event = Event::find($id);
         $event->delete($event);
-        return 'berhasil delete';
+        $data = $event->title;
+        return redirect('/admin-event')->with('sukses_delete' , $data);
     }
     
 }

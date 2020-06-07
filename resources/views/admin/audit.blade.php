@@ -49,7 +49,7 @@
                     </div>
                     <div class="mb-2 text-center">
                         <!-- Button trigger modal -->
-                    <a class="btn btn-secondary btn-sm" style="width: 40%" href="#" role="button" data-toggle="modal" data-target="#edit-person-{{$p->id}}">Edit</a>                    
+                        <a class="btn btn-secondary btn-sm" style="width: 40%" href="#" role="button" data-toggle="modal" data-target="#edit-person-{{$p->id}}">Edit</a>                    
                         <a class="btn btn-secondary btn-sm" style="width: 40%" href="#" role="button" data-toggle="modal" data-target="#delete-person-{{$p->id}}">Delete</a>
                     </div>
 
@@ -157,7 +157,7 @@
                                 <div class="form-group">
                                 <label for="disabledSelect">Divisi</label>
                                     <select id="disabledSelect" class="form-control" disabled>
-                                        <option>Divisi Litbang</option>
+                                        <option>Divisi Audit</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
