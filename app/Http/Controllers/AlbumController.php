@@ -24,7 +24,7 @@ class AlbumController extends Controller
             $file = $request->file('thumbnails');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/home_images/', $filename);
+            $file->move('uploads/gallery/', $filename);
             $data_thumbnail->thumbnails = $filename;
         } else {
             $data_thumbnail->thumbnails = '';
@@ -42,7 +42,7 @@ class AlbumController extends Controller
             {
                 $extension = $image_array[$i]->getClientOriginalExtension();
                 $filename = rand(0, 99999999) . '.' . $extension;
-                $image_array[$i]->move('uploads/home_images/', $filename);
+                $image_array[$i]->move('uploads/gallery/', $filename);
 
                 $data_album = new Album();
                 $data_album->album_name = $request->input('album_name');

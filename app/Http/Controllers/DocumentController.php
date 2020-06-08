@@ -9,62 +9,39 @@ class DocumentController extends Controller
 {
     public function index() 
     {
-        return view('admin.document');
+        $document = Document::all();
+        return view('admin.document', compact('document'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function create(Request $request) 
     {
-        //
+        $document = new Document();
+
+        $document->title = $request->input('title');
+        $document->description = $request->input('description');
+        $document->document = $request->input('document');
+
+        if ($request->hasFile('document')) {
+            $file = $request->file('document');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(0, 99999999) . '.' . $extension;
+            $file->move('uploads/document/', $filename);
+            $document->document = $filename;
+        } else {
+            $document->document = '';
+            return redirect('/admin-document')->with('gagal', 'data tidak boleh kosong');
+        }
+
+        $document->save();
+        return redirect('/admin-document')->with('sukses', 'Dokumen berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-       
+        $document = Document::find($id);
+        $document->delete($document);
+        $name = $document->title;
+
+        return redirect('admin-document')->with('sukses_delete', $name);
     }
 }

@@ -63,7 +63,7 @@
             <div class="mb-3">
                 <a href="#" data-toggle="modal" data-target="#album-preview-{{$thumb->id}}">
                     <div class="card shadow-lg" style="width: 15rem;">
-                        <img src="{{asset('uploads/home_images/' . $thumb->thumbnails)}}" class="card-img-top" height="150px" alt="...">
+                        <img src="{{asset('uploads/gallery/' . $thumb->thumbnails)}}" class="card-img-top" height="150px" alt="...">
                     </div>
                 </a>
                 <a href="#" class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#album-delete-{{$thumb->id}}" style="width: 15rem;">Delete</a>
@@ -78,7 +78,7 @@
                         
                         @foreach ($photo_album as $item)
                             @if (strcmp($thumb->album_name, $item->album_name)==0) 
-                                <img src="{{asset('uploads/home_images/' . $item->image)}}" width="250" height="250">
+                                <img src="{{asset('uploads/gallery/' . $item->image)}}" width="250" height="250">
                             @endif   
                         @endforeach
                     

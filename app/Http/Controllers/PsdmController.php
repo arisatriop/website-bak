@@ -10,7 +10,8 @@ class PsdmController extends Controller
     public function index()
     {
         $person = Psdm::all();
-        return view('admin.psdm', compact('person'));
+        $department_images = \App\DepartmentImages::all()->skip(2)->take(1);
+        return view('admin.psdm', compact('person','department_images'));
     }
 
     public function create(Request $request)
@@ -26,7 +27,7 @@ class PsdmController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/home_images/', $filename);
+            $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
             return $request;
@@ -50,7 +51,7 @@ class PsdmController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/home_images/', $filename);
+            $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
             return $request;
@@ -61,6 +62,26 @@ class PsdmController extends Controller
         return redirect('/admin-psdm')->with('sukses', 'Data berhasil diupdate');
     }
 
+    public function updatePhoto(Request $request, $id)
+    {
+        $photo = \App\DepartmentImages::find($id);
+        $photo->image = $request->input('image');
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(0, 99999999) . '.' . $extension;
+            $file->move('uploads/department_images/', $filename);
+            $photo->image = $filename;
+        } else {
+            return $request;
+            $photo->image = '';
+        }
+
+        $photo->save();
+        return redirect('/admin-psdm')->with('sukses_update_photo', 'Gambar berhasil diupdate');
+    }
+
     public function destroy($id)
     {
         $person = Psdm::find($id);
@@ -69,4 +90,5 @@ class PsdmController extends Controller
 
         return redirect('/admin-psdm')->with('sukses_delete', $data);
     }
+    
 }

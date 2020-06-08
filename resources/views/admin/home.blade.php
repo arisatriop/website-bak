@@ -195,9 +195,6 @@
                     <div class="media border-bottom-primary border-left-danger border p-1">
                         <img src="{{ asset('uploads/home_images/' . $testy->avatar)}}" class="mr-2 mt-1 rounded-circle" alt="..." width="60" height="60">
                         <div class="media-body">
-                            {{-- <p class="d-flex mt-0 text-justify" style="font-size: 12px">{{$testy->quote}}</p>
-                            <h5 class="testimoni" style="font-size: 14px">{{$testy->name}}</h5>
-                            <h5 class="testimoni" style="font-size: 12px">{{$testy->position}}</h5> --}}
                             <div class="form-group"  style="min-height: 150px">
                                 <p class="d-flex mt-0 text-justify" style="font-size: 12px">{{$testy->quote}}</p>
                             </div>

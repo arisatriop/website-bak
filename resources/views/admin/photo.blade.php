@@ -39,7 +39,7 @@
                 {{-- Photo Items --}}
                 <div class="items d-flex flex-column">
                     <div class="card shadow-lg" style="width: 15rem;">
-                        <img src="{{asset('uploads/home_images/' . $p->image)}}" class="card-img-top" height="150px" alt="...">
+                        <img src="{{asset('uploads/gallery/' . $p->image)}}" class="card-img-top" height="150px" alt="...">
                     </div>
                     <a href="#" class="btn btn-danger" type="button" data-toggle="modal" data-target="#photo">Delete</a>
                     {{-- <a class="btn btn-danger" href="#" role="button" data-toggle="modal" data-target="#delete-event-{{$e->id}}">Delete</a> --}}

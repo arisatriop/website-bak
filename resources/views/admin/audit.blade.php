@@ -17,8 +17,52 @@
             '{{session('sukses_delete')}}' telah dihapus dari daftar staff.
         </div>    
     @endif
+    @if (session('sukses_update_photo'))
+        <div class="alert alert-success mt-3 text-center mx-5" role="alert">
+            {{session('sukses_update_photo')}}
+        </div>    
+    @endif
     <div class="jumbotron m-5 bg-white shadow-lg">
-        <div class="row mt-n5">
+
+        <div class="row mt-n5 d-flex justify-content-between">
+            <div class="">
+                <h3>Department Image</h3>
+            </div>
+            <div>
+                <button class="btn btn-primary" style="width: 100px" data-toggle="modal" data-target="#modalEdit">Edit</button>
+            </div>
+            <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="/admin-audit/update-photo/2" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Photo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @foreach ($department_images as $img)
+        <div class="card mt-3">
+                <img src="{{ asset('uploads/department_images/' . $img->image)}}" class="card-img" alt="...">
+        </div>
+        @endforeach
+
+        <div class="row mt-5">
             <h3>About</h3>
         </div>
         <div class="row text-justify">
@@ -39,7 +83,7 @@
             <li class="nav-item mx-1 mb-3">
                 <div class="card" style="width: 14rem;">
                     <div class="mt-2 text-center">
-                    <img src="{{asset('/uploads/home_images/'. $p->image)}}" class="rounded-circle" width="90" height="90" alt="...">
+                    <img src="{{asset('/uploads/staff_images/'. $p->image)}}" class="rounded-circle" width="90" height="90" alt="...">
                     </div>
                     <div class="card-body text-center">
                     <h5 class="card-title">{{$p->name}}</h5>

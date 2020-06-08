@@ -23,7 +23,7 @@ class PhotoController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/home_images/', $filename);
+            $file->move('uploads/gallery/', $filename);
             $photo->image = $filename;
         } else {
             $photo->image = '';

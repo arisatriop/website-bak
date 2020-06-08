@@ -15,7 +15,8 @@ class PhController extends Controller
     public function index()
     {
         $person = Ph::all();
-        return view('admin.ph', compact('person'));
+        $department_images = \App\DepartmentImages::all()->take(1);
+        return view('admin.ph', compact('person','department_images'));
     }
 
     /**
@@ -37,7 +38,7 @@ class PhController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/home_images/', $filename);
+            $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
             return $request;
@@ -102,7 +103,7 @@ class PhController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/home_images/', $filename);
+            $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
             $person->image = '';
@@ -112,6 +113,27 @@ class PhController extends Controller
 
         $person->save();
         return redirect('/admin-ph')->with('sukses', 'Data berhasil ditambahkan');
+    }
+
+    public function updatePhoto(Request $request, $id) {
+        
+        $photo = \App\DepartmentImages::find($id);
+        $photo->image = $request->input('image');
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(0, 99999999) . '.' . $extension;
+            $file->move('uploads/department_images/', $filename);
+            $photo->image = $filename;
+        } else {
+            $photo->image = '';
+            // return "GAGAL MEMPERBAHARUI DATA! GAMBAR TIDAK BOLEH KOSONG";
+            return redirect('/admin-ph')->with('sukses', 'GAGAL');
+        }
+
+        $photo->save();
+        return redirect('/admin-ph')->with('sukses_update_photo', 'Gambar berhasil diupdate');
     }
 
     /**
@@ -129,4 +151,5 @@ class PhController extends Controller
         // return redirect('/admin-ph')->with('sukses_delete', 'Data telah dihapus');
         return redirect('/admin-ph')->with('sukses_delete', $data);
     }
+
 }

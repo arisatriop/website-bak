@@ -49,7 +49,7 @@
                 <a href="" type="button" class="mb-5 text-decoration-none" data-toggle="modal" data-target="#item-{{$a->id}}">
                     <div class="d-flex justify-content-center flex-wrap">
                         <div class="card shadow-lg" style="width: 15rem; height:15rem">
-                            <img src="{{asset('uploads/home_images/' . $a->image)}}" class="card-img-top" height="150px" alt="...">
+                            <img src="{{asset('uploads/article_event/' . $a->image)}}" class="card-img-top" height="150px" alt="...">
                             <div class="card-body text-center mb-2">
                                 <h6 class="card-title text-gray-700">{{$a->title}}</h6>
                             </div>

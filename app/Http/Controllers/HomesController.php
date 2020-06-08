@@ -25,8 +25,6 @@ class HomesController extends Controller
      */
     public function create(Request $request)
     {
-        // Home::create($request->all());
-        // return redirect('/admin-home')->with('sukses','Data berhasil ditambahkan');
         $home_images = new Home();
 
         $home_images->judul = $request->input('judul');
@@ -47,42 +45,12 @@ class HomesController extends Controller
         return redirect('/admin-home')->with('sukses', 'Data berhasil ditambahkan');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        // 
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Home $home)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Home $home)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
     {
-        // $home_image = Home::find($id);
-        // $home_image->update($request->all());
-        // return redirect('/admin-home')->with('sukses','Data berhasil diupdate');
-
-        /**
-         *  Query for table home_images
-         */
         $home_images = Home::find($id);
 
         $home_images->judul = $request->input('judul');

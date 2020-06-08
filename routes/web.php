@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LitbangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
+
 Route::get('/admin-home', 'HomesController@index');
 Route::post('/admin-home/create', 'HomesController@create');
 Route::post('/admin-hoome-testimony/create', 'TestimoniesController@create');
@@ -39,26 +41,30 @@ Route::get('/admin-ph', 'PhController@index');
 Route::post('/admin-ph/add-person', 'PhController@create');
 Route::post('/admin-ph/update/{id}', 'PhController@update');
 Route::get('/admin-ph/delete/{id}', 'PhController@destroy');
+Route::post('admin-ph/update-photo/{id}', 'PhController@updatePhoto');
 
 Route::get('/admin-audit', 'AuditController@index');
 Route::post('/admin-audit/add-person', 'AuditController@create');
 Route::post('/admin-audit/update/{id}', 'AuditController@update');
 Route::get('/admin-audit/delete/{id}', 'AuditController@destroy');
+Route::post('/admin-audit/update-photo/{id}', 'AuditController@updatePhoto');
 
 Route::get('/admin-litbang', 'LitbangController@index');
 Route::post('/admin-litbang/add-person', 'LitbangController@create');
 Route::post('/admin-litbang/update/{id}', 'LitbangController@update');
 Route::get('/admin-litbang/delete/{id}', 'LitbangController@destroy');
+Route::post('/admin-litbang/update-photo/{id}', 'LitbangController@updatePhoto');
 
 Route::get('/admin-psdm', 'PsdmController@index');
 Route::post('/admin-psdm/add-person', 'PsdmController@create');
 Route::post('/admin-psdm/update/{id}', 'PsdmController@update');
 Route::get('/admin-psdm/delete/{id}', 'PsdmController@destroy');
+Route::post('/admin-psdm/update-photo/{id}', 'PsdmController@updatePhoto');
 
 Route::get('/admin-document', 'DocumentController@index');
 Route::post('/admin-document/create', 'DocumentController@create');
-Route::post('/admin-document/update{id}', 'DocumentController@update');
-Route::get('/admin-document/delete{id}', 'DocumentController@destroy');
+Route::post('/admin-document/update/{id}', 'DocumentController@update');
+Route::get('/admin-document/delete/{id}', 'DocumentController@destroy');
 
 Route::get('/admin-about', 'AboutController@index');
 Route::post('/admin-about/add-visi', 'AboutController@createVisi');
