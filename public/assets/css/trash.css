@@ -1,0 +1,1006 @@
+/* Profile Page */
+.img .img-fluid {
+    width: 100%;
+    max-height: 670px;
+}
+
+.profile {
+    margin-top: 50px;
+}
+
+.profile ul {
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.profile ul li {
+    width: 25%;
+    text-align: center;
+}
+
+.profile ul li a {
+    text-transform: uppercase;
+    font-family: 'Patua One', cursive;
+    color: grey;
+}
+
+.profile ul li a:hover {
+    background-color: rgba(200, 200, 200, 0.2);
+}
+
+.profile ul li a:active {
+    color: rgb(139, 0, 0);
+    font-size: 20px;
+}
+
+.profile .tab-content {
+    border: 2px solid white;
+}
+
+.tab-content .profile-content {
+    margin: 5%;
+}
+
+.profile-content h1 {
+    font-family: 'Patua One', cursive;
+    color: rgb(139, 0, 0);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile-content h3 {
+    font-family: 'Patua One', cursive;
+    color: rgb(139, 0, 0);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile-content .profile-desc {
+    display: grid;
+    justify-items: center;
+    margin-bottom: 70px;
+}
+
+.profile-content .profile-desc p {
+    width: 70%;
+    text-align: justify;
+}
+
+
+
+
+
+/* Responsive Breakpoints */
+@media (max-width: 369px) {
+    .bak-name {
+        padding-bottom: 15px;
+    }
+
+    .top-nav {
+        width: 100%;
+        height: 25px;
+        background-color: rgb(139, 0, 0);
+        display: flex;
+    }
+
+    .scroll-left {
+        font-size: 12px;
+        height: 25px;
+        overflow: hidden;
+        position: relative;
+        width: 50%;
+        margin-right: 10px;
+    }
+
+    .list-one {
+        margin-right: 10px;
+    }
+
+    .list-two {
+        margin-right: 5px;
+    }
+
+    .icon-edit {
+        margin-right: 0px;
+    }
+
+    .carousel-item img {
+        height: 350px;
+        ;
+    }
+
+    .bak-name h1 {
+        font-size: 30px;
+    }
+
+    .text-center h3 {
+        font-size: 9px;
+    }
+
+    .text-center .desc {
+        font-size: 12px;
+    }
+
+    .my-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .my-container::after {
+        content: "";
+        background: url(../img/logobak3.png);
+        background-size: 150px;
+        opacity: 0.08;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .col-satu {
+        width: 100%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-satu h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .col-satu .desc {
+        font-size: 12px;
+    }
+
+    .col-satu a p {
+        font-size: 12px;
+    }
+
+    .col-dua {
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        margin-top: 0;
+    }
+
+    .col-dua img {
+        height: 280px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .container-three {
+        display: grid;
+    }
+
+    .container-three .card-left {
+        width: 100%;
+    }
+
+    .container-three h3 {
+        text-align: center;
+    }
+
+    .card-left .card-two {
+        display: none;
+    }
+
+    .testimonial {
+        margin-bottom: 10px;
+    }
+
+    .testimonial h2 {
+        font-size: 25px;
+    }
+
+    .testimony-section div .desc {
+        font-size: 12px;
+        text-align: justify;
+    }
+
+    .card-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .last .row {
+        padding-left: 0;
+    }
+
+    .mid-side {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .right-side {
+        margin-bottom: 25px;
+    }
+}
+
+
+/* Responsive Breakpoints */
+@media (min-width: 370px) {
+    .top-nav {
+        width: 100%;
+        height: 25px;
+        background-color: rgb(139, 0, 0);
+        display: flex;
+    }
+
+    .scroll-left {
+        font-size: 12px;
+        height: 25px;
+        overflow: hidden;
+        position: relative;
+        width: 50%;
+        margin-right: 10px;
+    }
+
+    .list-one {
+        margin-right: 20px;
+    }
+
+    .list-two {
+        margin-right: 5px;
+    }
+
+    .icon-edit {
+        margin-right: 5px;
+    }
+
+    .carousel-item img {
+        height: 350px;
+        ;
+    }
+
+    .bak-name {
+        padding-bottom: 15px;
+    }
+
+    .bak-name h1 {
+        font-size: 35px;
+    }
+
+    .text-center h3 {
+        font-size: 10px;
+    }
+
+    .text-center .desc {
+        font-size: 12px;
+    }
+
+    .my-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .my-container::after {
+        content: "";
+        background: url(../img/logobak3.png);
+        background-size: 150px;
+        opacity: 0.08;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .col-satu {
+        width: 100%;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-satu h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .col-satu .desc {
+        font-size: 13px;
+    }
+
+    .col-satu a p {
+        font-size: 12px;
+    }
+
+    .col-dua {
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        margin-top: 0;
+    }
+
+    .col-dua img {
+        height: 250px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .container-three {
+        display: grid;
+    }
+
+    .container-three .card-left {
+        width: 100%;
+    }
+
+    .container-three h3 {
+        text-align: center;
+    }
+
+    .card-left .card-two {
+        display: none;
+    }
+
+    .testimony-section .desc {
+        font-size: 12px;
+        text-align: justify;
+    }
+
+    .card-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .last .row {
+        padding-left: 0;
+    }
+
+    .mid-side {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .right-side {
+        margin-bottom: 25px;
+    }
+}
+
+
+
+/* Responsive Breakpoints */
+@media (min-width: 576px) {
+    .top-nav {
+        width: 100%;
+        height: 25px;
+        background-color: rgb(139, 0, 0);
+        display: flex;
+    }
+
+    .scroll-left {
+        font-size: 12px;
+        height: 25px;
+        overflow: hidden;
+        position: relative;
+        width: 50%;
+        margin-right: 10px;
+    }
+
+    .list-one {
+        margin-right: 25px;
+    }
+
+    .list-two {
+        margin-right: 10px;
+    }
+
+    .icon-edit {
+        margin-right: 10px;
+    }
+
+    .carousel-item img {
+        height: 350px;
+        ;
+    }
+
+    .bak-name {
+        padding-bottom: 15px;
+    }
+
+    .bak-name h1 {
+        font-size: 30px;
+    }
+
+    .text-center h3 {
+        font-size: 20px;
+    }
+
+    .text-center .desc {
+        font-size: 14px;
+    }
+
+    .my-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .my-container::after {
+        content: "";
+        background: url(../img/logobak3.png);
+        background-size: 150px;
+        opacity: 0.08;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .col-satu {
+        width: 100%;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-satu h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .col-satu .desc {
+        font-size: 12px;
+    }
+
+    .col-satu a p {
+        font-size: 12px;
+    }
+
+    .col-dua {
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        margin-top: 0;
+    }
+
+    .col-dua img {
+        height: 320px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-right {
+        margin-top: 50px;
+    }
+}
+
+
+
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+    .bak-name {
+        padding-bottom: 0;
+    }
+
+    .top-nav {
+        width: 100%;
+        height: 25px;
+        background-color: rgb(139, 0, 0);
+        display: flex;
+    }
+
+    .scroll-left {
+        font-size: 12px;
+        height: 25px;
+        overflow: hidden;
+        position: relative;
+        width: 75%;
+        margin-right: 15px;
+    }
+
+    .list-one {
+        margin-right: 40px;
+    }
+
+    .list-two {
+        margin-right: 10px;
+    }
+
+    .icon-edit {
+        margin-right: 10px;
+    }
+
+    .carousel-item img {
+        height: 550px;
+        ;
+    }
+
+    .bak-name h1 {
+        font-size: 40px;
+    }
+
+    .text-center h3 {
+        font-size: 27px;
+    }
+
+    .text-center .desc {
+        font-size: 18px;
+    }
+
+    .my-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .my-container::after {
+        content: "";
+        background: url(../img/logobak3.png);
+        background-size: 150px;
+        opacity: 0.08;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .col-satu {
+        width: 100%;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-satu h1 {
+        font-size: 30px;
+        text-align: start;
+    }
+
+    .col-satu .desc {
+        font-size: 16px;
+    }
+
+    .col-satu a p {
+        font-size: 14px;
+    }
+
+    .col-dua {
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        margin-top: 0;
+    }
+
+    .col-dua img {
+        height: 400px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: 2px 2px px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-left .card-two {
+        display: inline-block;
+    }
+
+    .last .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mid-side form {
+        margin-top: -50px;
+        margin-left: 30px;
+        width: 200%;
+    }
+
+    .maps {
+        display: none;
+    }
+
+    .maps2 {
+        width: 100%;
+        height: 330px;
+        margin-bottom: 25px;
+    }
+
+    .card-right {
+        margin-top: 50px;
+    }
+
+    .card-right img {
+        height: 300px
+    }
+
+}
+
+
+
+
+/* Responsive Breakpoints */
+@media (min-width: 990px) {
+    #mainNav {
+        margin-top: 45px;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .nav-header #mainNav {
+        margin-top: 0px;
+        background-color: transparent;
+    }
+
+    #mainNav .navbar-brand {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #mainNav .navbar-brand:hover {
+        color: #fff;
+        font-size: 16px;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: rgb(139, 0, 0);
+        padding: 0 1rem;
+        margin-right: 15px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color: #4A4141;
+    }
+
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0;
+    }
+
+    #mainNav.navbar-scrolled {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand {
+        color: #212529;
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand:hover {
+        color: #f4623a;
+    }
+
+    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+        color: rgb(139, 0, 0);
+    }
+
+    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+        color: #4A4141;
+    }
+
+    .list-one {
+        margin-right: 40px;
+    }
+
+    .list-two {
+        margin-right: 10px;
+    }
+
+    .icon-edit {
+        margin-right: 20px;
+    }
+
+    .my-container {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .my-container::after {
+        content: "";
+        background: url(../img/logobak3.png);
+        background-size: 150px;
+        opacity: 0.08;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .col-satu {
+        width: 100%;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-satu h1 {
+        font-family: 'Patua One', cursive;
+        color: rgb(139, 0, 0);
+    }
+
+    .col-satu .desc {
+        margin-top: 20px;
+        font-size: 16px;
+        color: black;
+        text-align: justify;
+    }
+
+    .col-satu a p {
+        font-size: 18px;
+        color: rgb(139, 0, 0);
+        text-align: end;
+    }
+
+    .col-dua {
+        margin-top: 0;
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-dua img {
+        height: 400px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: 2px 2px px rgba(0, 0, 0, 0.7);
+    }
+
+    .container-three {
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .container-three h3 {
+        color: rgb(139, 0, 0);
+        font-weight: 800;
+        margin-bottom: 25px;
+        border-bottom: 3px solid rgb(139, 0, 0);
+        text-align: left;
+    }
+
+    .container-three a p {
+        color: rgb(139, 0, 0);
+        margin-top: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .container-three .card-text {
+        text-align: justify;
+    }
+
+    .container-three .card-left {
+        width: 70%;
+    }
+
+    .container-three .card-right {
+        width: 30%;
+        margin-left: 30px;
+        margin-top: 0;
+    }
+
+    .card-right img {
+        max-height: 200px;
+    }
+
+    .card-left .card-body {
+        min-height: 170px;
+    }
+}
+
+
+
+
+/* Responsive Breakpoints */
+@media (min-width: 1200px) {
+    #mainNav {
+        margin-top: 45px;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    #mainNav .navbar-brand {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #mainNav .navbar-brand:hover {
+        color: #fff;
+        font-size: 16px;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: rgb(139, 0, 0);
+        padding: 0 1rem;
+        margin-right: 15px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color: lightgrey;
+    }
+
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0;
+    }
+
+    #mainNav.navbar-scrolled {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+        margin-top: 0;
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand {
+        color: #212529;
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand:hover {
+        color: #f4623a;
+    }
+
+    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+        color: rgb(139, 0, 0);
+    }
+
+    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+        color: grey;
+    }
+
+    .list-one {
+        margin-right: 40px;
+    }
+
+    .list-two {
+        margin-right: 10px;
+    }
+
+    .icon-edit {
+        margin-right: 20px;
+    }
+
+    .my-container {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .my-container::after {
+        content: "";
+        background: url(../img/logobak3.png);
+        background-size: 150px;
+        opacity: 0.08;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .col-satu {
+        width: 60%;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .col-satu h1 {
+        font-family: 'Patua One', cursive;
+        color: rgb(139, 0, 0);
+    }
+
+    .col-satu .desc {
+        margin-top: 20px;
+        font-size: 16px;
+        color: black;
+        text-align: justify;
+    }
+
+    .col-satu a p {
+        font-size: 18px;
+        color: rgb(139, 0, 0);
+        text-align: end;
+    }
+
+    .col-dua {
+        margin-top: 0;
+        width: 38%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        margin-left: 15px;
+    }
+
+    .col-dua img {
+        height: 360px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 2px 2px px rgba(0, 0, 0, 0.7);
+    }
+
+    .container-three {
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .container-three h3 {
+        color: rgb(139, 0, 0);
+        font-weight: 800;
+        margin-bottom: 25px;
+        border-bottom: 3px solid rgb(139, 0, 0);
+        text-align: left;
+    }
+
+    .container-three a p {
+        color: rgb(139, 0, 0);
+        margin-top: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .container-three .card-text {
+        text-align: justify;
+    }
+
+    .container-three .card-left {
+        width: 70%;
+    }
+
+    .container-three .card-right {
+        width: 30%;
+        margin-left: 30px;
+        margin-top: 0;
+    }
+
+    .card-right img {
+        max-height: 200px;
+    }
+
+    .last .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mid-side form {
+        margin-top: -35px;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .maps {
+        display: inline-block;
+    }
+
+    .maps2 {
+        display: none;
+    }
+
+    .card-right {
+        margin-top: 50px;
+    }
+
+    .card-right img {
+        height: 300px
+    }
+}

@@ -48,6 +48,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Description</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="info1">{{$inf->info1}}</textarea>
                                 </div>
                             </div>

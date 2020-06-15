@@ -41,6 +41,8 @@ class DocumentController extends Controller
         $document = Document::find($id);
         $document->delete($document);
         $name = $document->title;
+        $data = $document->document;
+        unlink(public_path('uploads/document/' . $data));
 
         return redirect('admin-document')->with('sukses_delete', $name);
     }

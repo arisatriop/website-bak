@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Icon Title -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logoBAK.png" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logoBAK.png') }}" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style-me.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style-me.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -25,9 +25,9 @@
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 
     <!-- Tambahan -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
 
     <title> @yield('title') </title>
@@ -40,7 +40,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <img src="assets/img/logoBAK.png" width="65" height="65">
+                <img src="{{ asset('assets/img/logoBAK.png') }}" width="65" height="65">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse my-nav" id="navbarResponsive">
@@ -54,17 +54,17 @@
                             <li><a href="/litbang">Divisi Litbang</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/artikel">ARTICLE</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/article">ARTICLE</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#">DOKUMEN</a>
                         <ul type="none">
-                            <li><a href="/ad-art">AD ART</a></li>
-                            <li><a href="/kode-etik">Kode Etik</a></li>
-                            <li><a href="/tata-tertib">Tata Tertib</a></li>
-                            <li><a href="/sak">Standar Akuntansi Keuangan</a></li>
+                            <li><a href="/#">AD ART</a></li>
+                            <li><a href="/#">Kode Etik</a></li>
+                            <li><a href="/#">Tata Tertib</a></li>
+                            <li><a href="/#">Standar Akuntansi Keuangan</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/galeri">GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/gallery">GALLERY</a></li>
                 </ul>
             </div>
         </div>
@@ -100,27 +100,28 @@
                     </div>
                 </div>
                 <div class="col-md-4 mid-side">
-                    <form>
+                    <form action="/inbox" method="POST">
+                        @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Name</label>
-                                <input class="form-control" id="">
+                                <input class="form-control" id="" name="name" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Phone Number</label>
-                                <input class="form-control" id="">
+                                <input class="form-control" id="" name="phone" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Subject</label>
-                            <input type="text" class="form-control" id="">
+                            <input type="text" class="form-control" id="" name="subject" required>
                         </div>
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea class="form-control" rows="3" placeholder="Type your message here"></textarea>
+                            <textarea class="form-control" rows="3" placeholder="Type your message here" name="message" required></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary bt-kirim-pesan">Send Message</button>
+                            <button type="submit" class="btn btn-primary bt-kirim-pesan" onclick="return alert('Terima kasih, pesan anda sudah terkirim')">Send Message</button>
                         </div>
                     </form>
                 </div>
@@ -155,17 +156,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     
     <!-- Core theme JS-->
-    <script src="assets/js/scripts.js"></script>
+    <script src="{{ asset('assets/js/scripts.js') }}"></script>
     
     <!-- Tambahan -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="assets/js/jquery.waypoints.min.js"></script>
-    <script src="assets/js/jquery.stellar.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/scrollax.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/scrollax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <!-- Googpe API Maps -->
     <script src="http://maps.googleapis.com/maps/api/js"></script>

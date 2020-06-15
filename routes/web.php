@@ -14,12 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.dashboard');
-});
-
 // Route::get('/', function () {
-//     return view('index');
+//     return view('admin.dashboard');
 // });
 
 
@@ -27,6 +23,8 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
+
+Route::get('/', 'UserHomeController@index');
 
 Route::get('/admin-home', 'HomesController@index');
 Route::post('/admin-home/create', 'HomesController@create');
@@ -36,6 +34,8 @@ Route::post('/admin-home/update2/{id}', 'HomesController@update2');
 Route::post('/admin-home/testimony/update/{id}', 'TestimoniesController@update');
 Route::get('/admin-home/delete/{id}', 'HomesController@destroy');
 Route::get('/admin-home/testimony/delete/{id}', 'TestimoniesController@destroy');
+Route::post('/admin-home/edit-text/{id}', 'HomesController@updateText');
+Route::get('/admin-inbox', 'HomesController@inbox');
 
 Route::get('/admin-ph', 'PhController@index');
 Route::post('/admin-ph/add-person', 'PhController@create');
@@ -94,5 +94,20 @@ Route::get('/admin-gallery-album', 'AlbumController@index');
 Route::post('/admin-gallery-album/create', 'AlbumController@create');
 Route::get('/admin-gallery-album/delete/{id}/{album_name}', 'AlbumController@delete');
 
-
 Route::get('/admin-panduan', 'PanduanController@index');
+
+
+
+/** 
+ * This code execute when user click element in Home Pages
+ */
+Route::get('/about', 'UserAboutController@index');
+Route::get('/article-item/{ar}', 'UserArticleItemController@show');
+Route::get('/event-item/{event}', 'UserEventItemController@show');
+Route::post('/inbox', 'UserHomeController@inbox');
+Route::get('/ph', 'UserProfileController@ph');
+Route::get('/audit', 'UserProfileController@audit');
+Route::get('/psdm', 'UserProfileController@psdm');
+Route::get('/litbang', 'UserProfileController@litbang');
+Route::get('/article', 'UserArticleController@index');
+Route::get('/gallery', 'UserGalleryController@index');

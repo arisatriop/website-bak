@@ -38,6 +38,8 @@ class PhotoController extends Controller
     public function delete($id) {
         $photo = Photo::find($id);
         $photo->delete($photo);
+        $img = $photo->image;
+        unlink(public_path('uploads/gallery/' . $img));
         return redirect('/admin-gallery-photo')->with('sukses_delete', 'Photo telah dihapus');
     }
 }

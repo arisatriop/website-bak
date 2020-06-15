@@ -1,0 +1,1004 @@
+body {
+    font-family: "Merriweather",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+/* Navbar */
+#mainNav {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+#mainNav .navbar-brand {
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    color: #212529;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: rgb(139, 0, 0);
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active {
+    color: grey;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active {
+    color: #ccc !important;
+}
+
+#mainNav.navbar-scrolled {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: white;
+    margin-top: 0;
+}
+
+.my-nav ul li {
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px;
+    margin-right: 40px;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.my-nav ul li a {
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+}
+
+.my-nav ul ul {
+    position: absolute;
+    background-color: rgba(139, 0, 0, 0.9);
+    border: 2px solid rgba(100, 0, 0, 0.9);
+    border-top: 3px;
+    min-width: 200px;
+    padding: 10px;
+    opacity: none;
+    visibility: hidden;
+}
+
+.my-nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.my-nav ul ul li {
+    padding-top: 5px;
+    display: list-item;
+    text-shadow: none;
+}
+
+.my-nav ul ul li a,
+visited {
+    color: white;
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 3px;
+    letter-spacing: 1px;
+    min-width: 200px;
+    font-weight: 500;
+}
+
+.my-nav ul ul li a:hover {
+    color: #ccc;
+    font-size: 15px;
+}
+
+
+
+
+/* FOOTER */
+.last .row {
+    background-color: rgb(139, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    color: wheat;
+    padding-top: 25px;
+}
+
+.left-side h3 {
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 1px rgba(3, 3, 3, 0.7);
+}
+
+.left-side div {
+    display: flex;
+}
+
+.left-side div p {
+    margin-top: -4px;
+    padding-left: 20px;
+}
+
+.left-side .icon-bottom {
+    margin-right: 15px;
+    color: lightgrey;
+}
+
+/* Input Form */
+.bt-kirim-pesan {
+    width: 100%;
+    background-color: rgb(100, 0, 0);
+    color: #fff;
+    border: 1px solid white;
+}
+
+.bt-kirim-pesan:hover {
+    border: 1px solid #fff;
+    background-color: rgb(139, 0, 0);
+}
+
+/* Maps */
+.maps {
+    width: 100%;
+    height: 330px;
+}
+
+.maps2 {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 25px;
+}
+
+.my-footer {
+    padding-top: 15px;
+    background-color: rgb(100, 0, 0);
+    border: 3px solid rgb(100, 0, 0);
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+}
+
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+
+/* HEADER */
+.header {
+    width: 100%;
+    height: 25px;
+    background-color: rgb(139, 0, 0);
+    display: flex;
+    /* justify-content: flex-end; */
+}
+
+.header .scroll-left {
+    color: white;
+    justify-content: end;
+}
+
+.header .list-icon {
+    display: flex;
+    color: salmon;
+}
+
+.list-icon .list-two {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list-icon .list-two a {
+    color: salmon;
+}
+
+.list-icon .list-two a:hover {
+    color: white;
+}
+
+.scroll-left a {
+    color: salmon;
+}
+
+.scroll-left a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+
+
+/* BODY */
+.carousel-img .carousel-inner::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 50%;
+}
+
+/* Jumbotron Title */
+.jumbotron {
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.jumbotron h1 {
+    font-family: 'Patua One', cursive;
+    color: rgb(139, 0, 0);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron h3 {
+    font-family: arial;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron .desc {
+    font-style: italic;
+
+}
+
+/* Second Section */
+.my-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.my-container::after {
+    content: "";
+    background: url(../img/logobak3.png);
+    background-size: 150px;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.col-satu {
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
+.col-satu h1 {
+    color: rgb(139, 0, 0);
+    text-align: start;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.col-satu a p {
+    color: rgb(139, 0, 0);
+    text-align: end;
+}
+
+.col-satu p {
+    text-align: justify;
+}
+
+.col-dua {
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    margin-top: 0;
+}
+
+.col-dua .carousel-caption h5 {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+/* Artikel dan Event */
+.container-three h3 {
+    color: rgb(139, 0, 0);
+    font-weight: bold;
+}
+
+.container-three a p {
+    color: rgb(139, 0, 0);
+    text-align: center;
+}
+
+.container-three .card-body .card-title {
+    font-weight: bold;
+}
+
+.container-three .card-right .card-two {
+    display: none;
+}
+
+.testimonial {
+    color: rgb(139, 0, 0);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    font-family: 'Patua One', cursive;
+    text-align: center;
+}
+
+.testimony-wrap {
+    display: block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    background: #fafafa;
+}
+
+.testimonial p {
+    margin-bottom: 0;
+}
+
+.quote-red {
+    color: rgb(180, 0, 0);
+}
+
+.testimony-section div .desc {
+    text-align: justify;
+}
+
+
+
+
+/* ===================================================================================================== */
+
+
+/* Responsive Breakpoint */
+@media (max-width: 991px) {
+    #mainNav {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: white;
+        transition: background-color 0.2s ease;
+        margin-top: 25px;
+    }
+
+    .my-nav ul li:hover ul {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+    }
+
+    .my-nav ul ul {
+        border-radius: 7px;
+    }
+
+    .my-nav ul li {
+        margin-top: -10px;
+    }
+
+    .my-nav ul ul {
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    .my-nav ul ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+@media (min-width: 315px) {
+    .header .scroll-left {
+        padding-right: 10px;
+        font-size: 10px;
+        padding-top: 6px;
+    }
+
+    .list-icon .list-two {
+        margin-right: 5px;
+    }
+
+    .list-icon .list-two .icon-edit {
+        margin-right: 5px;
+    }
+
+    .list-icon .list-one {
+        padding-right: 15px;
+    }
+
+    .mid-side {
+        margin-top: 50px;
+    }
+
+    .right-side {
+        margin-top: 40px;
+    }
+
+    .maps2 {
+        display: none;
+    }
+
+    .carousel-inner .image-size {
+        height: 300px;
+        width: 100%;
+    }
+
+    .jumbotron h1 {
+        margin-bottom: -3px;
+        font-size: x-large;
+    }
+
+    .jumbotron h3 {
+        font-size: x-small;
+        letter-spacing: 2px;
+        margin-top: 15px;
+    }
+
+    .jumbotron .desc {
+        font-size: 10px;
+        margin-top: 25px;
+    }
+
+    .my-container {
+        margin-top: -25px;
+    }
+
+    .col-satu h1 {
+        font-size: 20px;
+    }
+
+    .col-satu .desc {
+        font-size: 10px;
+        margin-top: 15px;
+    }
+
+    .col-satu a p {
+        font-size: 12px;
+    }
+
+    .col-dua img {
+        height: 230px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 13px;
+    }
+
+    .container-three {
+        margin-top: 50px;
+    }
+
+    .container-three h3 {
+        border-bottom: 2px solid rgb(139, 0, 0);
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .container-three a p {
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .card-body .card-title {
+        font-size: 15px;
+    }
+
+    .card-body .card-text {
+        font-size: 12px;
+    }
+
+    .container-three .card-left .card-two {
+        display: none;
+    }
+
+    .container-three .card-right {
+        margin-top: 50px;
+    }
+
+    .text-muted {
+        font-size: 10px;
+    }
+
+    .testimonial p {
+        font-size: 25px;
+        margin-top: 35px;
+    }
+
+    .testimony-section .owl-carousel {
+        margin: 0;
+    }
+
+    .testimony-section div .desc {
+        font-size: 12px;
+    }
+
+    .quote-red {
+        font-size: 20px;
+    }
+
+    .testimony-wrap {
+        padding-right: 0px;
+    }
+
+    .testimony-wrap .quote {
+        top: -30px;
+        left: 25px;
+    }
+
+    .testimony-wrap .user-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .testimony-wrap .name {
+        font-size: 12px;
+        margin-bottom: -5px;
+    }
+
+    .testimony-wrap .position {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 410px) {
+    .jumbotron h1 {
+        margin-bottom: -3px;
+        font-size: xx-large;
+    }
+
+    .jumbotron h3 {
+        font-size: medium;
+        letter-spacing: 1px;
+        margin-top: 15px;
+    }
+
+    .jumbotron .desc {
+        font-size: 13px;
+        margin-top: 25px;
+    }
+}
+
+@media (min-width: 576px) {
+    .list-icon .list-two {
+        margin-right: 8px;
+    }
+
+    .list-icon .list-two .icon-edit {
+        margin-right: 10px;
+    }
+
+    .list-icon .list-one {
+        padding-right: 25px;
+    }
+
+    .jumbotron h1 {
+        margin-bottom: -3px;
+        font-size: xx-large;
+    }
+
+    .jumbotron h3 {
+        font-size: x-large;
+        letter-spacing: 2px;
+        margin-top: 10px;
+    }
+
+    .jumbotron .desc {
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+    .col-satu {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .col-satu h1 {
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .col-satu .desc {
+        font-size: 16px;
+    }
+
+    .col-dua img {
+        height: 320px;
+    }
+
+    .container-three h3 {
+        font-size: 22px;
+    }
+
+    .card-body .card-title {
+        font-size: 16px;
+    }
+
+    .card-body .card-text {
+        font-size: 14px;
+    }
+
+    .testimonial p {
+        font-size: 40px;
+        margin-top: 35px;
+    }
+
+    .testimony-section .owl-carousel {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .testimony-wrap {
+        padding-right: 20px;
+    }
+
+    .testimony-section div .desc {
+        font-size: 14px;
+    }
+
+    .quote-red {
+        font-size: 23px;
+    }
+
+    .testimony-wrap .user-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .testimony-wrap .name {
+        font-size: 14px;
+    }
+
+    .testimony-wrap .position {
+        font-size: 12px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .header .scroll-left {
+        font-size: 11px;
+        padding-top: 5px;
+    }
+
+    .list-icon .list-two {
+        margin-right: 8px;
+    }
+
+    .list-icon .list-two .icon-edit {
+        margin-right: 15px;
+    }
+
+    .list-icon .list-one {
+        padding-right: 25px;
+    }
+
+    .maps {
+        display: none;
+    }
+
+    .maps2 {
+        display: inline-block;
+    }
+
+    .left-side div {
+        width: 125%;
+    }
+
+    .mid-side form {
+        width: 180%;
+        margin-left: 70px;
+        margin-top: -50px;
+    }
+
+    .carousel-inner .image-size {
+        height: 500px;
+        width: 100%;
+    }
+
+    .col-satu h1 {
+        font-size: 33px;
+    }
+
+    .col-satu .desc {
+        font-size: 18px;
+    }
+
+    .col-satu a p {
+        font-size: 18px;
+    }
+
+    .col-dua img {
+        height: 360px;
+    }
+
+    .col-dua .carousel-caption h5 {
+        font-size: 18px;
+    }
+
+    .container-three a p {
+        display: none;
+    }
+
+    .container-three .card-left .card-two,
+    .container-three .card-right .card-two {
+        display: inline-block;
+    }
+
+    .testimonial p {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .header .scroll-left {
+        padding-right: 10px;
+        font-size: 10px;
+        padding-top: 6px;
+    }
+
+    .list-icon .list-two {
+        margin-right: 5px;
+    }
+
+    .list-icon .list-two .icon-edit {
+        margin-right: 5px;
+    }
+
+    .list-icon .list-one {
+        padding-right: 15px;
+    }
+
+    .carousel-inner .image-size {
+        height: 700px;
+        width: 100%;
+    }
+
+    .jumbotron h1 {
+        margin-bottom: -3px;
+        font-size: 45px;
+    }
+
+    .jumbotron h3 {
+        font-size: 25px;
+        letter-spacing: 5px;
+        margin-top: 10px;
+    }
+
+    .jumbotron .desc {
+        font-size: 18px;
+        margin-top: 35px;
+    }
+
+    .col-satu .desc {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .col-satu h1 {
+        font-size: 36px;
+    }
+
+    .col-satu a p {
+        margin-top: 40px;
+    }
+
+    .col-dua img {
+        height: 450px;
+    }
+
+    .container-three .card-right .card-two {
+        display: none;
+    }
+
+    .container-three {
+        display: flex;
+    }
+
+    .container-three .card-left {
+        width: 70%;
+    }
+
+    .container-three .card-right {
+        width: 30%;
+        margin-left: 30px;
+        margin-top: 0;
+    }
+
+    .card-right img {
+        max-height: 200px;
+    }
+
+    .card-left .card-body {
+        min-height: 170px;
+    }
+
+    .card-right .card-text {
+        margin-bottom: 50px;
+    }
+
+    .container-three h3 {
+        text-align: start;
+        font-size: 22px;
+    }
+
+    .text-muted {
+        font-size: 12px;
+    }
+
+    .testimonial p {
+        font-size: 45px;
+        margin-top: 80px;
+    }
+
+    .testimony-section div .desc {
+        font-size: 16px;
+    }
+
+    .testimony-wrap .user-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimony-section .owl-carousel {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .testimony-wrap .name {
+        font-size: 16px;
+        margin-bottom: -1px;
+    }
+
+    .testimony-wrap .position {
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .header .scroll-left {
+        padding-right: 10px;
+        font-size: 12px;
+        padding-top: 4px;
+    }
+
+    .header .list-icon {
+        width: 25%;
+    }
+
+    .list-icon .list-two {
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .list-icon .list-two .icon-edit {
+        margin-right: 20px;
+    }
+
+    .mid-side form {
+        margin-top: -50px;
+        width: 100%;
+        margin-left: -15px;
+    }
+
+    .maps {
+        margin-top: -25px;
+        display: inline-block;
+    }
+
+    .maps2 {
+        display: none;
+    }
+
+    .left-side div {
+        width: 100%;
+    }
+
+    .carousel-inner .image-size {
+        height: 650px;
+        width: 100%;
+    }
+
+    .my-container {
+        margin-top: 25px;
+    }
+
+    .col-satu {
+        width: 60%;
+    }
+
+    .col-satu h1 {
+        padding-left: 35px;
+    }
+
+    .col-satu .desc {
+        font-size: 16px;
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+
+    .col-satu a p {
+        padding-right: 35px;
+    }
+
+    .col-dua {
+        width: 38%;
+        margin-left: 20px;
+    }
+
+    .col-dua img {
+        height: 385px;
+    }
+
+    .card-right img {
+        max-height: 300px;
+    }
+
+    .card-right .card-text {
+        margin-bottom: 80px;
+    }
+
+    .container-three h3 {
+        text-align: start;
+        font-size: 27px;
+    }
+
+    .testimony-section .owl-carousel {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .testimony-section div .desc {
+        font-size: 12px;
+    }
+
+    .testimony-wrap .user-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .testimony-wrap .name {
+        font-size: 14px;
+        margin-bottom: -1px;
+    }
+
+    .testimony-wrap .position {
+        font-size: 12px;
+    }
+
+    .testimonial .icon-quote {
+        margin-bottom: 15px;
+    }
+}
+
+
+@media (min-width: 1300px) {
+    .list-icon .list-two {
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .list-icon .list-two .icon-edit {
+        margin-right: 20px;
+    }
+
+    .testimony-section div .desc {
+        font-size: 14px;
+    }
+}

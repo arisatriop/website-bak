@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Home;
 use App\WebTitle;
 use App\Testimony;
+use App\Inbox;
 use Illuminate\Http\Request;
 
 class HomesController extends Controller
@@ -83,6 +84,18 @@ class HomesController extends Controller
         return redirect('/admin-home')->with('sukses2', 'Data berhasil diupdate');
     }
 
+    public function updateText(Request $request, $id)
+    {
+        /**
+         *  Query for table web_titles
+         */
+        $web_titles = WebTitle::find($id);
+        $web_titles->run_text = $request->input('run_text');
+        $web_titles->save();
+
+        return redirect('/admin-home')->with('sukses_text', 'Teks berhasil diupdate');
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -91,7 +104,15 @@ class HomesController extends Controller
     {
         $home_image = Home::find($id);
         $home_image->delete($home_image);
+        $img = $home_image->image;
+        unlink(public_path('uploads/home_images/' . $img));
         return redirect('/admin-home')->with('sukses_delete', 'Data telah dihapus');
+    }
+
+    public function inbox() 
+    {
+        $inbox = Inbox::all()->sortDesc();
+        return view('admin.inbox', compact('inbox'));
     }
 
 }

@@ -19,6 +19,47 @@
                 {{session('sukses_delete')}}
             </div>    
         @endif
+        @if (session('sukses_text'))
+            <div class="alert alert-success" role="alert">
+                {{session('sukses_text')}}
+            </div>    
+        @endif
+        
+        <div class="section mb-5">
+            <div class="row mb-4 d-flex justify-content-between mx-2">
+                <h4>Run Text</h4>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#editText">Edit</button>
+            </div>
+            @foreach ($web_titles as $data)
+            <form action="/admin-home/edit-text/{{$data->id}}" method="POST">
+                @csrf
+                {{-- Modal Edit Text --}}
+                <div class="modal fade" id="editText">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Text</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="run_text">{{$data->run_text}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <input type="text" class="form-control" value="{{$data->run_text}}" disabled>
+            </div>
+            @endforeach
+        </div>
+
         <div class="section mb-5">
             <h4 class="mb-4">Top Image Carousel</h4>
             <div class="top-img">
@@ -181,6 +222,7 @@
                 {{session('sukses_delete2')}}
             </div>    
         @endif
+
         <div class="section mb-5">
             <div class="row mb-4">
                 <div class="col-md-11">

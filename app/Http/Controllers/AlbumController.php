@@ -60,6 +60,8 @@ class AlbumController extends Controller
     {
         $thumbnails = Thumbnail::find($id);
         $thumbnails->delete($thumbnails);
+        $img = $thumbnails->thumbnails;
+        unlink(public_path('uploads/gallery/' . $img));
 
         $photo_album_array = Album::all()->where('album_name',  $album_name);
         $photo_album_array_length = count($photo_album_array);

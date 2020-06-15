@@ -66,6 +66,8 @@ class EventController extends Controller
         $event = Event::find($id);
         $event->delete($event);
         $data = $event->title;
+        $img = $event->image;
+        unlink(public_path('uploads/article_event/' . $img));
         return redirect('/admin-event')->with('sukses_delete' , $data);
     }
     

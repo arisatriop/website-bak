@@ -9,26 +9,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
     <!-- Custom styles and fonts for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
-    <!-- Font Awesome icons (free version)-->
-    {{-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script> --}}
-    {{-- <script src="https://use.fontawesome.com/cbb767562a.js"></script> --}}
+ 
+    {{-- Fontawesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}">
 
     <!-- CSS -->
-    <link href="assets/css/style-me-2.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/all.min.css"/>
+    <link href="{{ asset('assets/css/style-me-2.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}"/>
 
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
 
-    {{-- N O T  W O R K I N G --}}
-    {{-- <link rel="stylesheet" href="{{ URL::asset('assets/css/all.min.css') }}" /> --}}
 
 
     <title>@yield('title')</title>
@@ -137,7 +133,12 @@
             <div class="sidebar-heading">
                 OTHERS
             </div>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/admin-inbox">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Inbox</span>
+                </a>
+            </li>     
             <li class="nav-item">
                 <a class="nav-link" href="/admin-panduan">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -250,7 +251,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!-- Custom scripts for all pages-->
-    <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
 
     <script type="text/javascript">
         const realFileBtn = document.getElementById("real-file");

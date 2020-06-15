@@ -67,6 +67,8 @@ class ArticleController extends Controller
         $article = Article::find($id);
         $article->delete($article);
         $data = $article->title;
+        $img = $article->image;
+        unlink(public_path('uploads/article_event/' . $img));
         return redirect('/admin-article')->with('sukses_delete', $data);
     }
     

@@ -2,16 +2,10 @@
 @section('title', 'Badan Audit Kemahasiswaan UII')
 
 @section('header')
-    <div class="header">
-        <div class="scroll-left">
-            <marquee behavior="" direction="">
-                Test Scrolling Text...<a href="https://youtube.com" target="_blank"> KLIK DISINI </a>
-                1. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                4. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                ari satrio
-            </marquee>
+    @foreach ($web_titles as $data)
+    <div class="header d-flex justify-content-end">
+        <div class="scroll-left" style="width: 100%">
+            <marquee behavior="" direction="">{{$data->run_text}}</marquee>
         </div>
         <div class="list-icon">
             <div class="list-one">
@@ -25,6 +19,7 @@
             </div>
         </div>
     </div>
+    @endforeach
 @endsection    
 
 @section('content')
@@ -39,21 +34,15 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/4.jpg" class="image-size" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/bg-masthead.jpg" class="image-size" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/12.jpg" class="image-size" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/13.jpg" class="image-size" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/14.jpg" class="image-size" alt="...">
-                </div>
+                @foreach ($home_images as $data)
+                    <div @if ($loop->first)
+                        class="carousel-item active"
+                    @else
+                        class="carousel-item"
+                    @endif >
+                        <img src="{{asset('uploads/home_images/' . $data->image)}}" class="image-size" alt="...">
+                    </div>
+                @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,15 +57,17 @@
     <!-- END Carousel -->
 
     <!-- Jumbotron Title -->
+    @foreach ($web_titles as $data)
     <section>
         <div class="jumbotron text-center">
             <div class="bak-name">
-                <h1>BADAN AUDIT KEMAHASISWAAN</h1>
+                <h1>{{$data->bak_name}}</h1>
             </div>
-            <h3>UNIVERSITAS ISLAM INDONESIA</h3>
-            <p class="desc">"Mari bersama mewujudkan keuangan KM UII yang transparan, akuntabel, dan profesional".</p>
+            <h3>{{$data->uii_name}}</h3>
+            <p class="desc">{{$data->description}}</p>
         </div>
     </section>
+    @endforeach
     <!-- END Title -->
 
     <!-- Second Section -->
@@ -85,15 +76,10 @@
             <div class="row">
                 <div class="col-satu">
                     <h1>Kenali lebih dekat</h2>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Pariatur voluptates porro deserunt quibusdam dolores ducimus praesentium.
-                            Libero est molestias neque similique error,
-                            dolore sunt nihil? Temporibus aut iste dolorum esse! Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Pariatur voluptates porro deserunt quibusdam dolores ducimus praesentium.
-                            Libero est molestias neque similique error,
-                            dolore sunt nihil? Temporibus aut iste dolorum esse!</p>
-                        <a href="#">
+                        @foreach ($about_bak as $data)
+                        <p class="desc">{{ substr($data->info1, 0, 300)}} . . .</p>
+                        @endforeach
+                        <a href="/about">
                             <p>Baca selengkapnya</p>
                         </a>
                 </div>
@@ -151,27 +137,20 @@
         <div class="card-left">
             <h3>Article</h3>
             <div class="card-deck">
-                <div class="card">
-                    <img src="assets/img/7.JPG" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card card-two">
-                    <img src="assets/img/9.JPG" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+                
+                @foreach ($article as $ar)
+                    <div class="card">
+                        <a href="/article-item/{{$ar->id}}"><img src="{{asset('/uploads/article_event/' . $ar->image)}}" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <a href="/article-item/{{$ar->id}}" class="text-decoration-none" style="color: black"><h5 class="card-title">{{ $ar->title }}</h5></a>
+                            <p class="card-text text-justify">{{ substr($ar->content, 0, 125) }} . . . </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Created at {{ $ar->date }}</small>
+                        </div>
+                    </div>  
+                @endforeach
+                
             </div>
             <a href="">
                 <p>Lihat lainnya</p>
@@ -180,24 +159,26 @@
         <div class="card-right">
             <h3>Event</h3>
             <div class="card-deck">
+                @foreach ($event_satu as $event)
                 <div class="card">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <a href="/event-item/{{$event->id}}"><img src="{{asset('/uploads/article_event/' . $event->image)}}" class="card-img-top" alt="..."></a>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.</p>
-                        <p><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/event-item/{{$event->id}}" class="text-decoration-none" style="color: black"><h5 class="card-title">{{ $event->title }}</h5></a>
+                        <p class="card-text">{{ substr($event->description, 0, 125)}}</p>
+                        <p><small class="text-muted">Created at {{ $event->date }}</small></p>
                     </div>
                 </div>
+                @endforeach
+                @foreach ($event_dua as $event)
                 <div class="card card-two">
-                    <img src="assets/img/bg-masthead.jpg" class="card-img-top" alt="...">
+                    <a href="/event-item/{{$event->id}}"><img src="{{asset('/uploads/article_event/' . $event->image)}}" class="card-img-top" alt="..."></a>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.</p>
-                        <p><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/event-item/{{$event->id}}" class="text-decoration-none" style="color: black"><h5 class="card-title">{{ $event->title }}</h5></a>
+                        <p class="card-text">{{ substr($event->description, 0, 125)}}</p>
+                        <p><small class="text-muted">Created at {{ $event->date }}</small></p>
                     </div>
                 </div>
+                @endforeach
             </div>
             <a href="">
                 <p>Lihat lainnya</p>
@@ -218,92 +199,53 @@
     <!-- END Testimony Head -->
 
     <!-- Testimony -->
-    <section class="ftco-section testimony-section" style="margin-bottom: 50px">
+    <section class="ftco-section testimony-section mb-5">
         <div class="container-fluid px-md-5">
             <div class="row ftco-animate justify-content-center">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel">
+                        @foreach ($persons as $person)
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img" style="background-image: url(assets/img/person_1.jpg)">
+                                <div class="user-img" style="background-image: url({{ asset('/uploads/home_images/' . $person->avatar) }})">
                                 </div>
                                 <div class="text pl-4">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="fas fa-quote-left fa-2x quote-red"></i>
                                     </span>
-                                    <p class="desc">Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts.</p>
-                                    <p class="name">Racky Henderson</p>
-                                    <span class="position">Father</span>
+                                    <p class="desc">{{ $person->quote }}</p>
+                                    <p class="name">{{ $person->name }}</p>
+                                    <span class="position">{{ $person->position }}</span>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+
+                        
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img" style="background-image: url(assets/img/person_2.jpg)">
+                                <div class="user-img" style="background-image: url({{ asset('assets/img/staff-1.jpg') }})">
                                 </div>
                                 <div class="text pl-4">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="fas fa-quote-left fa-2x quote-red"></i>
                                     </span>
-                                    <p class="desc">Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts.</p>
-                                    <p class="name">Henry Dee</p>
-                                    <span class="position">Businesswoman</span>
+                                    <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate libero eaque, blanditiis, ratione quo iure, delectus corporis distinctio quod labore sed aperiam at voluptatibus autem!</p>
+                                    <p class="name">Ari Satrio Putra</p>
+                                    <span class="position">Staff Litbang</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img" style="background-image: url(assets/img/person_3.jpg)">
-                                </div>
-                                <div class="text pl-4">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-quote-left fa-2x quote-red"></i>
-                                    </span>
-                                    <p class="desc">Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts.</p>
-                                    <p class="name">Mark Huff</p>
-                                    <span class="position">Businesswoman</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img" style="background-image: url(assets/img/person_4.jpg)">
-                                </div>
-                                <div class="text pl-4">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-quote-left fa-2x quote-red"></i>
-                                    </span>
-                                    <p class="desc">Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts.</p>
-                                    <p class="name">Rodel Golez</p>
-                                    <span class="position">Businesswoman</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img" style="background-image: url(assets/img/staff-1.jpg)">
-                                </div>
-                                <div class="text pl-4">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-quote-left fa-2x quote-red"></i>
-                                    </span>
-                                    <p class="desc">Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts.</p>
-                                    <p class="name">Ken Bosh</p>
-                                    <span class="position">Businesswoman</span>
-                                </div>
-                            </div>
-                        </div>
+            
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- END Testimony -->
+
+
+    
 
 @endsection
 

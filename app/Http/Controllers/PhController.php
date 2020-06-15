@@ -147,8 +147,8 @@ class PhController extends Controller
         $person = Ph::find($id);
         $data = $person->name;
         $person->delete($person);
-        // $data = $person->name;
-        // return redirect('/admin-ph')->with('sukses_delete', 'Data telah dihapus');
+        $img = $person->image;
+        unlink(public_path('uploads/staff_images/' . $img));
         return redirect('/admin-ph')->with('sukses_delete', $data);
     }
 

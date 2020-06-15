@@ -87,7 +87,8 @@ class LitbangController extends Controller
         $person = Litbang::find($id);
         $data = $person->name;
         $person->delete($person);
-
+        $img = $person->image;
+        unlink(public_path('uploads/staff_images/' . $img));
         return redirect('/admin-litbang')->with('sukses_delete', $data);
     }
 
