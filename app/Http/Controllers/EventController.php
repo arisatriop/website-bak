@@ -20,6 +20,8 @@ class EventController extends Controller
 
         $event->title = $request->input('title');
         $event->image = $request->input('image');
+        $event->column6 = $request->input('column6');
+        $event->column7 = $request->input('column7');
         $event->description = $request->input('description');
         $event->date = Carbon::now();
 
@@ -43,6 +45,8 @@ class EventController extends Controller
         $event = Event::find($id);
         $event->title = $request->input('title');
         $event->image = $request->input('image');
+        $event->column6 = $request->input('column6');
+        $event->column7 = $request->input('column7');
         $event->description = $request->input('description');
         $event->date = Carbon::now();
 

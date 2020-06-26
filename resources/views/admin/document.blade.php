@@ -29,7 +29,7 @@
             <thead>
                 <tr class="text-center">
                     <th scope="col">FIle Name</th>
-                    <th scope="col">Description</th>
+                    {{-- <th scope="col">Description</th> --}}
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -37,9 +37,9 @@
                 @foreach ($document as $doc)
                 <tr>
                     <td>{{$doc->title}}</td>
-                    <td class="flex-grow-1 text-center">{{$doc->description}}</td>
+                    {{-- <td class="text-center">{{$doc->description}}</td> --}}
                     <td class="text-center" width="210px">
-                        <button type="button" class="btn btn-info btn-sm" disabled>Preview</button>
+                        <a href="{{ $doc->description }}" target="_blank" type="button" class="btn btn-info btn-sm">Preview</a>
                         <button type="button" class="btn btn-primary btn-sm" disabled>Edit</button>
                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#document-delete{{$doc->id}}">Delete</button>
                     </td>
@@ -90,12 +90,12 @@
                             <input type="text" class="form-control" placeholder="document title" name="title" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Description</label>
+                            <label for="exampleFormControlInput1">Link Document</label>
                             <input type="text" class="form-control" placeholder="document description" name="description" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Document FIle</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document" required>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document" disabled>
                         </div>
                     </div>
                     <div class="modal-footer">

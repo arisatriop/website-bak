@@ -367,6 +367,10 @@ visited {
 
 /* Responsive Breakpoint */
 @media (max-width: 991px) {
+    .m-main-content {
+        margin-top: 100px;
+    }
+
     #mainNav {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         background-color: white;

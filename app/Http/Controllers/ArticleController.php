@@ -21,6 +21,8 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->author = $request->input('author');
         $article->image = $request->input('image');
+        $article->tanggal = $request->input('tanggal');
+        $article->image_caption = $request->input('image_caption');
         $article->content = $request->input('content');
         $article->date = Carbon::now();
 
@@ -44,6 +46,8 @@ class ArticleController extends Controller
         $article = Article::find($id);
         $article->title = $request->input('title');
         $article->author = $request->input('author');
+        $article->tanggal = $request->input('tanggal');
+        $article->image_caption = $request->input('image_caption');
         $article->image = $request->input('image');
         $article->content = $request->input('content');
         $article->date = Carbon::now();

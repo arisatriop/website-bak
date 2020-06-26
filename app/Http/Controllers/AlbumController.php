@@ -63,13 +63,16 @@ class AlbumController extends Controller
         $img = $thumbnails->thumbnails;
         unlink(public_path('uploads/gallery/' . $img));
 
-        $photo_album_array = Album::all()->where('album_name',  $album_name);
-        $photo_album_array_length = count($photo_album_array);
-        for($i=0; $i<$photo_album_array_length; $i++)
-        {
-            $photo_album_array[$i]->delete($photo_album_array[$i]);
-        }   
-        
+        $photo_album_array = Album::all()->where('album_name',  $album_name);   
+        foreach ($photo_album_array as $key) {
+            $filename = $key->image;            
+            unlink(public_path('uploads/gallery/' . $filename));
+
+            $id = $key->id;
+            $data = Album::find($id);
+            $data->delete($data);
+        }
+
         $data = $thumbnails->album_name;
         
         return redirect('/admin-gallery-album')->with('sukses_delete', $data);

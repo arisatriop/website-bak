@@ -41,7 +41,7 @@
                     <div class="card shadow-lg" style="width: 15rem;">
                         <img src="{{asset('uploads/gallery/' . $p->image)}}" class="card-img-top" height="150px" alt="...">
                     </div>
-                    <a href="#" class="btn btn-danger" type="button" data-toggle="modal" data-target="#photo">Delete</a>
+                    <a href="#" class="btn btn-danger mb-2" type="button" data-toggle="modal" data-target="#photo">Delete</a>
                     {{-- <a class="btn btn-danger" href="#" role="button" data-toggle="modal" data-target="#delete-event-{{$e->id}}">Delete</a> --}}
                 </div>
                 {{-- End of Photo Items --}}
@@ -89,6 +89,10 @@
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Image</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Caption</label>
+                                <input type="text" class="form-control" id="exampleFormControlFile1" name="caption" required>
                             </div>
                         </div>
                         <div class="modal-footer">

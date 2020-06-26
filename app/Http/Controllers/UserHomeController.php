@@ -13,10 +13,11 @@ class UserHomeController extends Controller
         $article = \App\Article::all()->sortDesc()->take(2);
         $event_satu = \App\Event::all()->sortDesc()->take(1);
         $event_dua = \App\Event::all()->sortDesc()->skip(1)->take(1);
-        $persons = \App\Testimony::all();
+        $person = \App\Testimony::all()->take(1);
+        $persons = \App\Testimony::all()->skip(1);
 
 
-        return view('index', compact('web_titles', 'home_images', 'about_bak', 'article', 'event_satu', 'event_dua', 'persons'));
+        return view('index', compact('web_titles', 'home_images', 'about_bak', 'article', 'event_satu', 'event_dua', 'person', 'persons'));
     }
 
     public function inbox(Request $request) {
@@ -26,7 +27,7 @@ class UserHomeController extends Controller
         $inbox->subject = $request->input('subject');
         $inbox->message = $request->input('message');
 
-        $inbox->save();
+        $inbox->save(); 
 
         return redirect('/');
     }

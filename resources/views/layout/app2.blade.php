@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/lightbox.min.css') }}">
 
 
     <title> @yield('title') </title>
@@ -37,7 +38,7 @@
 
     @yield('header')
 
-    <nav class="navbar navbar-expand-lg navbar-light py-2 mb-3" id="mainNav">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light py-2 mb-3" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <img src="{{ asset('assets/img/logoBAK.png') }}" width="65" height="65">
@@ -46,22 +47,22 @@
             <div class="collapse navbar-collapse my-nav" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/article">ARTICLE</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#">PROFILE</a>
                         <ul type="none">
                             <li><a href="/ph">Pengurus Harian</a></li>
-                            <li><a href="/audit">Divisi Audt</a></li>
+                            <li><a href="/audit">Divisi Audit</a></li>
                             <li><a href="/psdm">Divisi PSDM</a></li>
                             <li><a href="/litbang">Divisi Litbang</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/article">ARTICLE</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#">DOKUMEN</a>
-                        <ul type="none">
-                            <li><a href="/#">AD ART</a></li>
-                            <li><a href="/#">Kode Etik</a></li>
-                            <li><a href="/#">Tata Tertib</a></li>
-                            <li><a href="/#">Standar Akuntansi Keuangan</a></li>
-                        </ul>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document">DOKUMEN</a>
+                        {{-- <ul type="none">
+                            <li><a href="#">AD ART</a></li>
+                            <li><a href="#">Kode Etik</a></li>
+                            <li><a href="#">Tata Tertib</a></li>
+                            <li><a href="#">Standar Akuntansi Keuangan</a></li>
+                        </ul> --}}
                     </li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about">ABOUT</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/gallery">GALLERY</a></li>
@@ -129,14 +130,9 @@
                     <div class="maps" id="googleMap"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="maps2" id="googleMap2"></div>
-                </div>
-            </div>
         </div>
         <div class="my-footer">
-            <p>Copyright&copy; 2020 <span class="dot"></span> Badan Audit Kemahasiswaan | Universitas Islam Indonesia</p>
+            <p class="text-footer">Copyright&copy; 2020 <span class="dot"></span> Badan Audit Kemahasiswaan | Universitas Islam Indonesia</p>
         </div>
     </footer>
 
@@ -167,6 +163,7 @@
     <script src="{{ asset('assets/js/aos.js') }}"></script>
     <script src="{{ asset('assets/js/scrollax.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/lightbox-plus-jquery.min.js') }}"></script>    
 
     <!-- Googpe API Maps -->
     <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -180,21 +177,6 @@
             };
 
             var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
-        }
-
-        // event jendela di-load  
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <script>
-        // fungsi initialize untuk mempersiapkan peta
-        function initialize() {
-            var propertiPeta = {
-                center: new google.maps.LatLng(-7.6113398422, 110.427211232),
-                zoom: 9,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-
-            var peta = new google.maps.Map(document.getElementById("googleMap2"), propertiPeta);
         }
 
         // event jendela di-load  

@@ -46,22 +46,22 @@
             <div class="collapse navbar-collapse my-nav" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/article">ARTICLE</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#">PROFILE</a>
                         <ul type="none">
                             <li><a href="/ph">Pengurus Harian</a></li>
-                            <li><a href="/audit">Divisi Audt</a></li>
+                            <li><a href="/audit">Divisi Audit</a></li>
                             <li><a href="/psdm">Divisi PSDM</a></li>
                             <li><a href="/litbang">Divisi Litbang</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/article">ARTICLE</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#">DOKUMEN</a>
-                        <ul type="none">
-                            <li><a href="/#">AD ART</a></li>
-                            <li><a href="/#">Kode Etik</a></li>
-                            <li><a href="/#">Tata Tertib</a></li>
-                            <li><a href="/#">Standar Akuntansi Keuangan</a></li>
-                        </ul>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document">DOKUMEN</a>
+                        {{-- <ul type="none">
+                            <li><a href="#">AD ART</a></li>
+                            <li><a href="#">Kode Etik</a></li>
+                            <li><a href="#">Tata Tertib</a></li>
+                            <li><a href="#">Standar Akuntansi Keuangan</a></li>
+                        </ul> --}}
                     </li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about">ABOUT</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/gallery">GALLERY</a></li>

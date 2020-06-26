@@ -88,6 +88,16 @@
                                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
                                             </div>
                                         </div>
+                                        <div class="form-group d-flex">
+                                            <div class="form-group col-6 ml-n2">
+                                                <label for="exampleFormControlInput1">Hari, Tanggal</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="" name="tanggal" value="{{$a->tanggal}}" required>
+                                            </div>
+                                            <div class="form-group col-6 ml-n2">
+                                                <label for="exampleFormControlInput1">Image Caption</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="" name="image_caption" value="{{$a->image_caption}}" required>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Article</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" required>{{$a->content}}</textarea>
@@ -114,7 +124,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="alert alert-danger" role="alert">
-                                        Anda akan menghapus '{{$a->title}}' dari daftar event?
+                                        Anda akan menghapus '{{$a->title}}' dari daftar artikel?
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -160,6 +170,16 @@
                                     <div class="form-group col-6">
                                         <label for="exampleFormControlFile1">Image</label>
                                         <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                    </div>
+                                </div>
+                                <div class="form-group d-flex">
+                                    <div class="form-group col-6 ml-n2">
+                                        <label for="exampleFormControlInput1">Hari, Tanggal</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex: Senin, 1 Januari 2020 - 20.00 WIB" name="tanggal" value="" required>
+                                    </div>
+                                    <div class="form-group col-6 ml-n2">
+                                        <label for="exampleFormControlInput1">Image Caption</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="caption" name="image_caption" value="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">

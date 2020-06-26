@@ -18,6 +18,7 @@ class PhotoController extends Controller
     {
         $photo = new Photo();
         $photo->image = $request->input('image');
+        $photo->image = $request->input('caption');
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');

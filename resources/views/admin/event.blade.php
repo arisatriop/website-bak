@@ -41,7 +41,7 @@
                     </a>      
                 </div>  
                 {{-- End of Add Event --}}
-
+ 
 
                 @foreach ($event as $e)
                     
@@ -83,9 +83,19 @@
                                         <label for="exampleFormControlTextarea1">Event</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="description" required>{{$e->description}}</textarea>
                                     </div>
-                                    <div class="form-group">                
-                                        <label for="exampleFormControlFile1">Choose file for edit image</label>
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>                   
+                                    <div class="form-group d-flex">
+                                        <div class="form-group col-6 ml-n2">
+                                            <label for="exampleFormControlFile1">Chose file</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                        </div>
+                                        <div class="form-group col-6 ml-n2">
+                                            <label for="exampleFormControlInput1">Hari, Tanggal</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput2" name="column6" value="{{ $e->column6 }}" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Image Caption</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="caption" name="column7" value="{{ $e->column7 }}" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -96,7 +106,8 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div>           
+
                     {{-- Modal Delete Event --}}
                     <form action="/admin-event/delete/{{$e->id}}">
                         <div class="modal fade" id="delete-event-{{$e->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,7 +133,6 @@
                         </div>
                     </form>
                 </div>
-
                 @endforeach
 
             </div>
@@ -151,9 +161,19 @@
                                     <label for="exampleFormControlTextarea1">Event</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="description" required></textarea>
                                 </div>
+                                <div class="form-group d-flex">
+                                    <div class="form-group col-6 ml-n2">
+                                        <label for="exampleFormControlFile1">Image</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                    </div>
+                                    <div class="form-group col-6 ml-n2">
+                                        <label for="exampleFormControlInput1">Hari, Tanggal</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex: Senin, 1 Januari 2020 - 20.00 WIB." name="column6" required>
+                                    </div>
+                                </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlFile1">Image</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                    <label for="exampleFormControlInput1">Image Caption</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="caption" name="column7" value="" required>
                                 </div>
                             </form>
                         </div>

@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </form> 
 
         <div class="d-flex flex-wrap justify-content-around">
         

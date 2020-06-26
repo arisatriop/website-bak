@@ -19,18 +19,18 @@ class DocumentController extends Controller
 
         $document->title = $request->input('title');
         $document->description = $request->input('description');
-        $document->document = $request->input('document');
+        // $document->document = $request->input('document');
 
-        if ($request->hasFile('document')) {
-            $file = $request->file('document');
-            $extension = $file->getClientOriginalExtension();
-            $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/document/', $filename);
-            $document->document = $filename;
-        } else {
-            $document->document = '';
-            return redirect('/admin-document')->with('gagal', 'data tidak boleh kosong');
-        }
+        // if ($request->hasFile('document')) {
+        //     $file = $request->file('document');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = rand(0, 99999999) . '.' . $extension;
+        //     $file->move('uploads/document/', $filename);
+        //     $document->document = $filename;
+        // } else {
+        //     $document->document = '';
+        //     return redirect('/admin-document')->with('gagal', 'data tidak boleh kosong');
+        // }
 
         $document->save();
         return redirect('/admin-document')->with('sukses', 'Dokumen berhasil ditambahkan');
@@ -41,8 +41,8 @@ class DocumentController extends Controller
         $document = Document::find($id);
         $document->delete($document);
         $name = $document->title;
-        $data = $document->document;
-        unlink(public_path('uploads/document/' . $data));
+        // $data = $document->document;
+        // unlink(public_path('uploads/document/' . $data));
 
         return redirect('admin-document')->with('sukses_delete', $name);
     }
