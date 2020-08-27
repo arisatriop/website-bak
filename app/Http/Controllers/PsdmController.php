@@ -87,8 +87,8 @@ class PsdmController extends Controller
         $person = Psdm::find($id);
         $data = $person->name;
         $person->delete($person);
-        $img = $person->image;
-        unlink(public_path('uploads/staff_images/' . $img));
+        // $img = $person->image;
+        // unlink(public_path('uploads/staff_images/' . $img));
         return redirect('/admin-psdm')->with('sukses_delete', $data);
     }
     

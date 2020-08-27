@@ -24,6 +24,20 @@ class ArticleController extends Controller
         $article->tanggal = $request->input('tanggal');
         $article->image_caption = $request->input('image_caption');
         $article->content = $request->input('content');
+        // $article->content2 = $request->input('content2');
+        // $article->content3 = $request->input('content3');
+        // $article->content4 = $request->input('content4');
+        // $article->content5 = $request->input('content5');
+        // $article->content6 = $request->input('content6');
+        // $article->content7 = $request->input('content7');
+        for ($i = 2; $i < 25; $i++) {
+            $subjudul = "subjudul$i";
+            $content = "content$i";
+            $article->$content = $request->input($content);
+            $article->$subjudul = $request->input($subjudul);
+        }
+
+        
         $article->date = Carbon::now();
 
         if ($request->hasFile('image')) {
@@ -48,20 +62,32 @@ class ArticleController extends Controller
         $article->author = $request->input('author');
         $article->tanggal = $request->input('tanggal');
         $article->image_caption = $request->input('image_caption');
-        $article->image = $request->input('image');
+        // $article->image = $request->input('image');
         $article->content = $request->input('content');
+        // $article->content2 = $request->input('content2');
+        // $article->content3 = $request->input('content3');
+        // $article->content4 = $request->input('content4');
+        // $article->content5 = $request->input('content5');
+        // $article->content6 = $request->input('content6');
+        // $article->content7 = $request->input('content7');
+        for ($i = 2; $i < 25; $i++) {
+            $subjudul = "subjudul$i";
+            $content = "content$i";
+            $article->$content = $request->input($content);
+            $article->$subjudul = $request->input($subjudul);
+        }
         $article->date = Carbon::now();
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = rand(0, 99999999) . '.' . $extension;
-            $file->move('uploads/article_event/', $filename);
-            $article->image = $filename;
-        } else {
-            $article->image = '';
-            return redirect('/admin-article')->with('gagal', 'data tidak boleh kosong');
-        }
+        // if ($request->hasFile('image')) {
+        //     $file = $request->file('image');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = rand(0, 99999999) . '.' . $extension;
+        //     $file->move('uploads/article_event/', $filename);
+        //     $article->image = $filename;
+        // } else {
+        //     $article->image = '';
+        //     return redirect('/admin-article')->with('gagal', 'data tidak boleh kosong');
+        // }
 
         $article->save();
         return redirect('/admin-article')->with('sukses_update', 'Artikel berhasil diupdate');
@@ -71,8 +97,8 @@ class ArticleController extends Controller
         $article = Article::find($id);
         $article->delete($article);
         $data = $article->title;
-        $img = $article->image;
-        unlink(public_path('uploads/article_event/' . $img));
+        // $img = $article->image;
+        // unlink(public_path('uploads/article_event/' . $img));
         return redirect('/admin-article')->with('sukses_delete', $data);
     }
     

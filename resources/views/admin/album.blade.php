@@ -42,7 +42,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1" class="mb-0">Photo</label>
-                                <div class="alert alert-info p-0" role="alert">Tips: Blog some image to upload more than one photo.</div>
+                                <div class="alert alert-info p-0" role="alert">Tips: Blog some image to upload more than one image.</div>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image[]" multiple>
                             </div>
                         </div>
@@ -60,12 +60,13 @@
             @foreach ($thumbnails as $thumb)
             {{-- Album Items --}}
             {{-- <a href="#" type="button" data-toggle="modal" data-target="preview"> --}}
-            <div class="mb-3">
+            <div class="mb-3 d-flex flex-column">
                 <a href="#" data-toggle="modal" data-target="#album-preview-{{$thumb->id}}">
                     <div class="card shadow-lg" style="width: 15rem;">
                         <img src="{{asset('uploads/gallery/' . $thumb->thumbnails)}}" class="card-img-top" height="150px" alt="...">
                     </div>
                 </a>
+                <a href="#" class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#add-image" style="width: 15rem;">Tambah Gambar</a>
                 <a href="#" class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#album-delete-{{$thumb->id}}" style="width: 15rem;">Delete</a>
             </div>
             {{-- End of Album Items --}}
@@ -79,12 +80,44 @@
                         @foreach ($photo_album as $item)
                             @if (strcmp($thumb->album_name, $item->album_name)==0) 
                                 <img src="{{asset('uploads/gallery/' . $item->image)}}" width="250" height="250">
-                            @endif   
+                            @endif    
                         @endforeach
                     
                     </div>
                 </div>
             </div>
+
+            {{-- Modal Create Album --}}
+            <form action="/admin-gallery-album/add" method="POST" enctype="multipart/form-data">
+                @csrf 
+                <div class="modal fade" id="add-image" tabindex="-1" role="dialog" aria-labelledby="createAlbum" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Foto</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Album Name</label>
+                                    <input class="form-control" type="text" value="{{ $thumb->album_name }}" name="album_name" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1" class="mb-0">Photo</label>
+                                    <div class="alert alert-info p-0" role="alert">Tips: Blog some image to upload more than one photo.</div>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image[]" multiple>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form> 
 
 
 

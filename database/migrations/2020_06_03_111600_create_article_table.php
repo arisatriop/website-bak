@@ -20,6 +20,12 @@ class CreateArticleTable extends Migration
             $table->mediumText('image');
             $table->longText('content');
             $table->date('date');
+            for($i = 2; $i<25; $i++) {
+                $subjudul = "subjudul$i";
+                $content = "content$i";
+                $table->text($subjudul);
+                $table->longText($content);
+            }
             $table->timestamps();
         });
     }

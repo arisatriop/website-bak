@@ -12,10 +12,10 @@
                 <i class="fas fa-bullhorn fa-flip-horizontal"></i>
             </div>
             <div class="list-two">
-                <a href="https://youtube.com" class="my-link"><i class="fab fa-instagram icon-edit"></i></a>
-                <a href="https://youtube.com" class="my-link"><i class="fab fa-line icon-edit"></i></a>
-                <a href="https://youtube.com" class="my-link"><i class="fas fa-envelope icon-edit"></i></a>
-                <a href="https://youtube.com" class="my-link"><i class="fas fa-phone-alt fa-flip-horizontal"></i></a>
+                <a href="https://www.instagram.com/bak.uii/" class="my-link" target="_blank"><i class="fab fa-instagram icon-edit"></i></a>
+                <a href="https://www.instagram.com/bak.uii/" class="my-link" target="_blank"><i class="fab fa-line icon-edit"></i></a>
+                <a href="https://www.instagram.com/bak.uii/" class="my-link" target="_blank"><i class="fas fa-envelope icon-edit"></i></a>
+                <a href="https://www.instagram.com/bak.uii/" class="my-link" target="_blank"><i class="fas fa-phone-alt fa-flip-horizontal"></i></a>
             </div>
         </div>
     </div>
@@ -95,25 +95,25 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="{{ asset('/assets/img/6-min.jpg') }}" class="d-block w-100" alt="...">
+                                    <img src="{{ asset('/assets/img/update.jpg') }}" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-md-block my-capt">
                                         <h5>Pengurus Harian</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('/assets/img/4.jpg') }}" class="d-block w-100" alt="...">
+                                    <img src="{{ asset('/assets/img/update.jpg') }}" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-md-block my-capt">
                                         <h5>Divisi Audit</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('/assets/img/5-min.jpg') }}" class="d-block w-100" alt="...">
+                                    <img src="{{ asset('/assets/img/update.jpg') }}" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-md-block my-capt">
                                         <h5>Divisi Pengembangan Sumber Daya Mahasiswa</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('/assets/img/9-min.jpg') }}" class="d-block w-100" alt="...">
+                                    <img src="{{ asset('/assets/img/update.jpg') }}" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-md-block my-capt">
                                         <h5>Divisi Penelitian dan Pengembangan</h5>
                                     </div>
@@ -142,7 +142,7 @@
                     
                     @foreach ($article as $ar)
                         <div class="card">
-                            <a href="/article-item/{{$ar->id}}"><img src="{{asset('/uploads/article_event/' . $ar->image)}}" class="card-img-top" alt="..."></a>
+                            <a href="/article-item/{{$ar->id}}"><img src="{{asset('/uploads/article_event/' . $ar->image)}}" class="card-img-top img-size" alt="..."></a>
                             <div class="card-body">
                                 <a href="/article-item/{{$ar->id}}" class="text-decoration-none" style="color: black"><h5 class="card-title">{{ $ar->title }}</h5></a>
                                 <p class="card-text text-justify">{{ substr($ar->content, 0, 125) }} . . . </p> 
@@ -160,31 +160,33 @@
             </div>
             <div class="card-right">
                 <h3>Event</h3>
-                <div class="card-deck">
+                <div class="card-deck card-deck-size">
                     @foreach ($event_satu as $event)
                     <div class="card">
-                        <a href="/event-item/{{$event->id}}"><img src="{{asset('/uploads/article_event/' . $event->image)}}" class="card-img-top" alt="..."></a>
+                        <a href="/event-item/{{$event->id}}"><img src="{{asset('/uploads/article_event/' . $event->image)}}" class="card-img-top img-size" alt="..."></a>
                         <div class="card-body">
                             <a href="/event-item/{{$event->id}}" class="text-decoration-none" style="color: black"><h5 class="card-title">{{ $event->title }}</h5></a>
-                            <p class="card-text">{{ substr($event->description, 0, 125)}}</p>
+                            <p class="card-text text-justify">{{ substr($event->description, 0, 125)}}</p>
                             <p><small class="text-muted">Created at {{ $event->date }}</small></p>
                         </div>
                     </div>
-                    <a href="/event-item/{{$event->id}}">
-                        <p>Lihat lainnya</p>
-                    </a>
+                    
                     @endforeach
                     @foreach ($event_dua as $event)
                     <div class="card card-two">
-                        <a href="/event-item/{{$event->id}}"><img src="{{asset('/uploads/article_event/' . $event->image)}}" class="card-img-top" alt="..."></a>
+                        <a href="/event-item/{{$event->id}}"><img src="{{asset('/uploads/article_event/' . $event->image)}}" class="card-img-top img-size" alt="..."></a>
                         <div class="card-body">
                             <a href="/event-item/{{$event->id}}" class="text-decoration-none" style="color: black"><h5 class="card-title">{{ $event->title }}</h5></a>
-                            <p class="card-text">{{ substr($event->description, 0, 125)}}</p>
+                            <p class="card-text text-justify">{{ substr($event->description, 0, 125)}}</p>
                             <p><small class="text-muted">Created at {{ $event->date }}</small></p>
                         </div>
                     </div>
                     @endforeach
                 </div>
+
+                <a href="/event-item/{{$event->id}}">
+                    <p>Lihat lainnya</p>
+                </a>
             </div>
         </div>
         <!-- END Artikel dan Event -->

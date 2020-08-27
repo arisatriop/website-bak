@@ -86,7 +86,7 @@
                                     <div class="form-group d-flex">
                                         <div class="form-group col-6 ml-n2">
                                             <label for="exampleFormControlFile1">Chose file</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
                                         </div>
                                         <div class="form-group col-6 ml-n2">
                                             <label for="exampleFormControlInput1">Hari, Tanggal</label>
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Image Caption</label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="caption" name="column7" value="{{ $e->column7 }}" required>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="caption" name="column7" value="{{ $e->column7 }}">
                                     </div>
                                 </div>
                                 <div class="modal-footer">

@@ -87,8 +87,8 @@ class AuditController extends Controller
         $person = Audit::find($id);
         $data = $person->name;
         $person->delete($person);
-        $img = $person->image;
-        unlink(public_path('uploads/staff_images/' . $img));
+        // $img = $person->image;
+        // unlink(public_path('uploads/staff_images/' . $img));
         return redirect('/admin-audit')->with('sukses_delete', $data);
     }
 

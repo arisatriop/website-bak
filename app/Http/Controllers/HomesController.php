@@ -104,8 +104,8 @@ class HomesController extends Controller
     {
         $home_image = Home::find($id);
         $home_image->delete($home_image);
-        $img = $home_image->image;
-        unlink(public_path('uploads/home_images/' . $img));
+        // $img = $home_image->image;
+        // unlink(public_path('uploads/home_images/' . $img));
         return redirect('/admin-home')->with('sukses_delete', 'Data telah dihapus');
     }
 

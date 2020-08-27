@@ -18,7 +18,7 @@
             @foreach ($article_main as $article_main)
             <div class="card m-jt-img m-jt-size-1 border-0"
                 style="background-image: url( {{ asset('/uploads/article_event/' . $article_main->image )}} )">
-                <div class="m-jt-content mb-5 ml-3">
+                <div class="m-jt-content mb-5 mx-3">
                     <h3 class="display-6 text-white">{{ $article_main->title}}</h3>
                     <a class="btn btn-danger btn-lg m-btn-1" href="/article-item/{{$article_main->id}}" role="button">Read more</a>
                 </div>
@@ -28,12 +28,12 @@
 
             <div class="col m-col d-flex flex-column justify-content-between">
                 @foreach ($article_second as $article_second)    
-                <div class="row">
+                <div class="row m-mb">
                     <div class="col p-0">
                         <div class="card m-jt-img m-jt-size-2 border-0"
                             style="background-image: url( {{ asset('/uploads/article_event/' . $article_second->image )}} )">
-                            <div class="m-jt-content mb-2 p-1">
-                                <h6 class="display-6 text-white">{{ $article_second->title }}</h6>
+                            <div class="m-jt-content mb-4 mx-2 p-1">
+                                <h5 class="display-6 text-white">{{ $article_second->title }}</h5>
                                 <a class="btn btn-danger btn-sm m-btn-2" href="/article-item/{{$article_second->id}}" role="button">Read more</a>
                             </div>
                         </div>
@@ -50,11 +50,11 @@
         <div class="container-fluid p-0 d-flex justify-content-between mt-5">
             @foreach ($article_row1 as $item)
             <div class="d-flex justify-content-between my-3 list-article">
-                <a href="" class="text-decoration-none">
+                <a href="/article-item/{{$item->id}}" class="text-decoration-none">
                 <div class="d-flex">
                     <img src="{{ asset('/uploads/article_event/' . $item->image )}}" width="100" height="100">
                     <div class="px-2">
-                        <h6 style="color: black">{{ $item->title }}</h6>
+                        <h6 style="color: black">{{ substr($item->title, 0, 60) }}</h6>
                     <p><small class="text-muted">Last updated <span>{{ $item->date }}</span></small></p>
                     </div>
                 </div>
@@ -66,11 +66,11 @@
         <div class="container-fluid p-0 d-flex justify-content-between">
             @foreach ($article_row2 as $item)
             <div class="d-flex justify-content-between my-3 list-article">
-                <a href="" class="text-decoration-none">
+                <a href="/article-item/{{$item->id}}" class="text-decoration-none">
                     <div class="d-flex">
                         <img src="{{ asset('/uploads/article_event/' . $item->image )}}" width="100" height="100">
                         <div class="px-2">
-                            <h6 style="color: black">{{ $item->title }}</h6>
+                            <h6 style="color: black">{{ substr($item->title, 0, 60) }}</h6>
                             <p><small class="text-muted">Last updated <span>{{ $item->date }}</span></small></p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
         @foreach ($article_mobile as $item)
         <div class="container-fluid p-0 mb-2 d-flex justify-content-between m-box">
             <div class="d-flex justify-content-between list-article">
-                <a href="" class="text-decoration-none">
+                <a href="/article-item/{{$item->id}}" class="text-decoration-none">
                     <div class="d-flex">
                         <img src="{{ asset('/uploads/article_event/' . $item->image )}}" width="100" height="100">
                         <div class="px-2">
@@ -116,7 +116,7 @@
                         <div class="m-ev-content">
                             <h5 style="color: white">{{ $item->title }}</h5>
                             <a class="btn btn-secondary btn-sm py-2 text-center" style="width: 200px"
-                                href="#">KUNJUNGI</a>
+                                href="/event-item/{{$item->id}}">KUNJUNGI</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                             <a class="btn btn-danger btn-sm mt-3" href="#" role="button">EVENT</a>
                             <div class="text-center mt-5">
                                 <a class="btn btn-secondary btn-sm py-2 text-center" style="width: 150px"
-                                    href="#">KUNJUNGI</a>
+                                    href="/event-item/{{$item->id}}">KUNJUNGI</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             <a class="btn btn-danger btn-sm mt-3" href="#" role="button">EVENT</a>
                             <div class="text-center mt-5">
                                 <a class="btn btn-secondary btn-sm py-2 text-center" style="width: 150px"
-                                    href="#">KUNJUNGI</a>
+                                    href="/event-item/{{$item->id}}">KUNJUNGI</a>
                             </div>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                         <div class="m-ev-content">
                             <h5 style="color: white">{{ $item->title }}</h5>
                             <a class="btn btn-secondary btn-sm py-2 text-center" style="width: 200px"
-                                href="#">KUNJUNGI</a>
+                                href="/event-item/{{$item->id}}">KUNJUNGI</a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                             <a class="btn btn-danger btn-sm text-center mt-3" href="#" role="button">EVENT</a>
                             <div class="m-ev-content">
                                 <a class="btn btn-secondary btn-sm py-2 text-center" style="width: 150px"
-                                    href="#">KUNJUNGI</a>
+                                    href="/event-item/{{$item->id}}">KUNJUNGI</a>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
                             <a class="btn btn-danger btn-sm text-center mt-3" href="#" role="button">EVENT</a>
                             <div class="m-ev-content">
                                 <a class="btn btn-secondary btn-sm py-2 text-center" style="width: 150px"
-                                    href="#">KUNJUNGI</a>
+                                    href="/event-item/{{$item->id}}">KUNJUNGI</a>
                             </div>
                         </div>
                     </div>

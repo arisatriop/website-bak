@@ -31,7 +31,7 @@ class AlbumController extends Controller
             return $request;
         }
 
-        $data_thumbnail->save();
+        $data_thumbnail->save(); 
 
         // $data_album->album_name = $request->input('album_name');
         if($request->hasFile('image'))
@@ -56,17 +56,39 @@ class AlbumController extends Controller
         return redirect('/admin-gallery-album')->with('sukses', 'Album berhasil ditambahkan');
     }
 
+    public function add(Request $request) 
+    {
+        if ($request->hasFile('image')) {
+            $image_array = $request->file('image');
+            $image_array_length = count($image_array);
+            for ($i = 0; $i < $image_array_length; $i++) {
+                $extension = $image_array[$i]->getClientOriginalExtension();
+                $filename = rand(0, 99999999) . '.' . $extension;
+                $image_array[$i]->move('uploads/gallery/', $filename);
+
+                $data_album = new Album();
+                $data_album->album_name = $request->input('album_name');
+                $data_album->image = $filename;
+                $data_album->save();
+            }
+        } else {
+            return "Please choose any image";
+        }
+
+        return redirect('/admin-gallery-album')->with('sukses', 'Gambar berhasil ditambahkan');
+    }
+
     public function delete($id, $album_name) 
     {
         $thumbnails = Thumbnail::find($id);
         $thumbnails->delete($thumbnails);
-        $img = $thumbnails->thumbnails;
-        unlink(public_path('uploads/gallery/' . $img));
+        // $img = $thumbnails->thumbnails;
+        // unlink(public_path('uploads/gallery/' . $img));
 
         $photo_album_array = Album::all()->where('album_name',  $album_name);   
         foreach ($photo_album_array as $key) {
-            $filename = $key->image;            
-            unlink(public_path('uploads/gallery/' . $filename));
+            // $filename = $key->image;            
+            // unlink(public_path('uploads/gallery/' . $filename));
 
             $id = $key->id;
             $data = Album::find($id);

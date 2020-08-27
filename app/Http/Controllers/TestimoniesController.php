@@ -75,8 +75,8 @@ class TestimoniesController extends Controller
     {
         $testimonials = Testimony::find($id);
         $testimonials->delete($testimonials);
-        $img = $testimonials->avatar;
-        unlink(public_path('uploads/home_images/' . $img));
+        // $img = $testimonials->avatar;
+        // unlink(public_path('uploads/home_images/' . $img));
         return redirect('/admin-home')->with('sukses_delete2', 'Data telah dihapus');
     }
 }

@@ -85,7 +85,7 @@
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleFormControlFile1">Choose file for edit image</label>
-                                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
                                             </div>
                                         </div>
                                         <div class="form-group d-flex">
@@ -99,9 +99,24 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Article</label>
+                                            <label for="exampleFormControlTextarea1">Paragraf 1</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" required>{{$a->content}}</textarea>
                                         </div>
+
+                                        @for ($i = 2; $i < 25; $i++)
+                                            @php ($subjudul = "subjudul$i")
+                                            @php ($content = "content$i")
+ 
+                                            <div class="form-group mt-5">
+                                                <label for="exampleFormControlInput1">Sub Judul <span class="ml-1>{{$i}}"></span></label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="" name="subjudul{{$i}}" value="{{ $a->$subjudul }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Paragraf <span class="ml-1">{{$i}}</span></label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content{{$i}}">{{$a->$content }}</textarea>
+                                            </div>
+                                        @endfor
+                                        
                                 </div>
                                 <div class="modal-footer">
                                     <a class="btn btn-danger" href="#" role="button" data-toggle="modal" data-target="#delete-article-{{$a->id}}">Delete</a>
@@ -182,10 +197,23 @@
                                         <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="caption" name="image_caption" value="" required>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Article</label>
+                                    <label for="exampleFormControlTextarea1">Paragraf 1</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" required></textarea>
                                 </div>
+
+                                @for ($i = 2; $i < 25; $i++)
+                                    <div class="form-group mt-5">
+                                        <label for="exampleFormControlInput1">Sub Judul <span class="ml-1">{{$i}}</span></label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="" name="subjudul{{$i}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Paragraf <span class="ml-1">{{$i}}</span></label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content{{$i}}"></textarea>
+                                    </div>
+                                @endfor
+    
                             </form>
                         </div>
                         <div class="modal-footer">

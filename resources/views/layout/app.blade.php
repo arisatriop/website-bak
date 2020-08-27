@@ -4,7 +4,10 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="PzPHBpryooCt8VmzhgSZgmMKPuW8ScmQXz-Q9poBY0A">
+    <meta name="description" content="Official Website Badan Audit Kemahasiswaan Universitas Islam Indonesia">
+    <meta name="keywords" content="bak, uii, bakuii, bak uii, badan audit, ph bak, audit bak psdm bak, litbang bak, uii, universitas islam indonesia">
 
     <!-- Icon Title -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logoBAK.png') }}" />
@@ -27,7 +30,7 @@
     <!-- Tambahan -->
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <!--<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">-->
 
 
     <title> @yield('title') </title>
@@ -93,10 +96,10 @@
                         <p>bak@uii.ac.id</p>
                     </div>
                     <div class="icon">
-                        <a href=""><i class="icon-bottom fab fa-instagram-square fa-4x"></i></a>
-                        <a href=""><i class="icon-bottom fab fa-line fa-4x"></i></a>
-                        <a href=""><i class="icon-bottom fas fa-envelope fa-4x"></i></a>
-                        <a href=""><i class="icon-bottom fab fa-chrome fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fab fa-instagram-square fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fab fa-line fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fas fa-envelope fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fab fa-chrome fa-4x"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 mid-side">
@@ -169,10 +172,12 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <!-- Googpe API Maps -->
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvFfulK6UxqGbdmaNL5QISTJdD4HP6ODg&callback=initMap">
+    </script>
     <script>
         // fungsi initialize untuk mempersiapkan peta
-        function initialize() {
+        function initMap() {
             var propertiPeta = {
                 center: new google.maps.LatLng(-7.6113398422, 110.427211232),
                 zoom: 9,
@@ -185,16 +190,23 @@
         // event jendela di-load  
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    
+    <!-- Googpe API Maps -->
+    
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvFfulK6UxqGbdmaNL5QISTJdD4HP6ODg&callback=initMap2">
+    </script>
     <script>
         // fungsi initialize untuk mempersiapkan peta
-        function initialize() {
+        function initMap2() {
             var propertiPeta = {
                 center: new google.maps.LatLng(-7.6113398422, 110.427211232),
                 zoom: 9,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
 
-            var peta = new google.maps.Map(document.getElementById("googleMap2"), propertiPeta);
+            var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
         }
 
         // event jendela di-load  

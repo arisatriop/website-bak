@@ -1,5 +1,6 @@
-
-body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
 
 p {
     text-align: justify;
@@ -242,8 +243,8 @@ visited {
 }
 
 .quote-red {
-    /*font-size: 20px;
-    color: rgb(139, 0, 0);*/
+    font-size: 20px;
+    color: rgb(139, 0, 0);
 }
 
 .testimony-wrap {
@@ -281,12 +282,12 @@ visited {
 /*-------------------------------------------------------------------*/
 /* Body Section */
 
-.col-head { 
-    border-bottom: 3px solid rgb(139,0,0);
+.col-head {
+    border-bottom: 3px solid rgb(139, 0, 0);
 }
 
 .col p {
-    background-color: rgb(139,0,0);
+    background-color: rgb(139, 0, 0);
     width: 200px;
     text-align: center;
     color: white;
@@ -318,7 +319,7 @@ visited {
 
 .m-box-label {
     text-align: center;
-    background-color: rgb(139,0,0);
+    background-color: rgb(139, 0, 0);
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -357,7 +358,7 @@ visited {
 }
 
 .m-gal-label {
-    background-color: rgb(139,0,0);
+    background-color: rgb(139, 0, 0);
     color: white;
     text-align: center;
     border-radius: 3px;
@@ -387,7 +388,7 @@ visited {
     width: 100%;
     height: 100%;
     bottom: 0;
-    background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     left: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -400,7 +401,7 @@ visited {
     width: 100%;
     height: 100%;
     bottom: 0;
-    background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     left: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -436,13 +437,14 @@ visited {
     text-align: center;
 }
 
-.nav .nav-item:hover{
+.nav .nav-item:hover {
     color: rgb(139, 0, 0);
     transform: scale(1.1);
     transition: .2s ease-in-out;
 }
 
-.nav .nav-item:focus, a:focus{
+.nav .nav-item:focus,
+a:focus {
     color: rgb(139, 0, 0)
 }
 
@@ -464,14 +466,22 @@ visited {
     background-size: cover;
 }
 
+.text-sejarah {
+    font-weight: bold;
+}
+
 /* ===================================================================================================== */
 
 /* Responsive Breakpoint*/
 @media (max-width: 1199px) {
+    .m-list-d {
+        display: none;
+    }
+
     .m-main-content {
         margin-top: 100px;
     }
-    
+
     #mainNav {
         background-color: white;
     }
@@ -534,11 +544,15 @@ visited {
 
     .m-gallery .item {
         margin-right: 5px;
-        margin-bottom: 5px; 
+        margin-bottom: 5px;
     }
 
     .m-lb {
         display: none;
+    }
+
+    .m-mb {
+        margin-bottom: 5px;
     }
 
     .m-row-1 {
@@ -575,6 +589,27 @@ visited {
     }
 }
 
+@media (min-width: 992px) {
+    .m-jt-size-1 {
+        width: 60%;
+        height: 400px;
+        margin-right: 5px;
+    }
+
+    .m-jt-size-2 {
+        height: 198px;
+    }
+
+    .m-col {
+        margin-top: 0px;
+    }
+
+    .m-mb {
+        margin-bottom: 0px;
+    }
+
+}
+
 @media (min-width: 1200px) {
     .article-2 {
         display: none;
@@ -603,6 +638,10 @@ visited {
     }
 
     .m-lb2 {
+        display: none;
+    }
+
+    .m-list-m {
         display: none;
     }
 
@@ -674,7 +713,11 @@ visited {
     }
 
     .m-e-size-2 {
-        width: 325px;
+        /* width: 325px;
+        height: 223px; */
+        /* min-width: 280px;
+        min-height: 180px; */
+        width: 49.8%;
         height: 223px;
     }
 
@@ -690,6 +733,12 @@ visited {
         width: 200px;
     }
 
+    .m-jt-size-1 {
+        width: 60%;
+        height: 450px;
+        margin-right: 0.2px;
+    }
+
     .m-jt-size-2 {
         height: 222px;
     }
@@ -701,6 +750,20 @@ visited {
 
     .thumb-size {
         height: 200px;
+    }
+
+    .visi {
+        width: 65%;
+    }
+
+    .visi p {
+        letter-spacing: .5px;
+        font-size: 18px;
+    }
+
+    .m-misi {
+        letter-spacing: .5px;
+        font-size: 18px;
     }
 
 }

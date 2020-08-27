@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style-me-3.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style-me-3.css') }}" >
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -27,7 +27,6 @@
     <!-- Tambahan -->
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/lightbox.min.css') }}">
 
 
@@ -94,10 +93,10 @@
                         <p>bak@uii.ac.id</p>
                     </div>
                     <div class="icon">
-                        <a href=""><i class="icon-bottom fab fa-instagram-square fa-4x"></i></a>
-                        <a href=""><i class="icon-bottom fab fa-line fa-4x"></i></a>
-                        <a href=""><i class="icon-bottom fas fa-envelope fa-4x"></i></a>
-                        <a href=""><i class="icon-bottom fab fa-chrome fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fab fa-instagram-square fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fab fa-line fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fas fa-envelope fa-4x"></i></a>
+                        <a href="https://www.instagram.com/bak.uii/" target="_blank"><i class="icon-bottom fab fa-chrome fa-4x"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 mid-side">
@@ -166,10 +165,12 @@
     <script src="{{ asset('assets/js/lightbox-plus-jquery.min.js') }}"></script>    
 
     <!-- Googpe API Maps -->
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvFfulK6UxqGbdmaNL5QISTJdD4HP6ODg&callback=initMap">
+    </script>
     <script>
         // fungsi initialize untuk mempersiapkan peta
-        function initialize() {
+        function initMap() {
             var propertiPeta = {
                 center: new google.maps.LatLng(-7.6113398422, 110.427211232),
                 zoom: 9,

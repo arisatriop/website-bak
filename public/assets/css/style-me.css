@@ -12,7 +12,7 @@ body {
         "Segoe UI Emoji",
         "Segoe UI Symbol",
         "Noto Color Emoji";
-}
+} 
 
 /* Navbar */
 #mainNav {
@@ -368,7 +368,7 @@ visited {
 /* Responsive Breakpoint */
 @media (max-width: 991px) {
     .m-main-content {
-        margin-top: 100px;
+        margin-top: 90px;
     }
 
     #mainNav {
@@ -605,6 +605,10 @@ visited {
         margin-top: 25px;
     }
 
+    .container-three .card-right .card-two {
+        display: flex;
+    }
+
     .col-satu {
         padding-left: 30px;
         padding-right: 30px;
@@ -733,10 +737,6 @@ visited {
         font-size: 18px;
     }
 
-    .container-three a p {
-        display: none;
-    }
-
     .container-three .card-left .card-two,
     .container-three .card-right .card-two {
         display: inline-block;
@@ -750,6 +750,67 @@ visited {
 
 
 @media (min-width: 992px) {
+    .carousel-inner .image-size {
+        height: 700px;
+        width: 100%;
+    }
+
+        .col-satu .desc {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        .container-three a p {
+            display: none;
+        }
+
+        .col-satu h1 {
+            font-size: 36px;
+        }
+
+        .col-satu a p {
+            margin-top: 40px;
+        }
+
+        .col-dua img {
+            height: 450px;
+        }
+
+        .container-three .card-right .card-two {
+            display: none;
+        }
+
+        .container-three {
+            display: flex;
+        }
+
+        .container-three .card-left {
+            width: 70%;
+        }
+
+        .container-three .card-right {
+            width: 30%;
+            margin-left: 30px;
+            margin-top: 0;
+        }
+
+        /* .card-right img {
+            max-height: 200px;
+        } */
+
+        .card-left .card-body {
+            min-height: 170px;
+        }
+
+        .card-right .card-text {
+            margin-bottom: 50px;
+        }
+
+        .container-three h3 {
+            text-align: start;
+            font-size: 22px;
+        }
+
     .header .scroll-left {
         padding-right: 10px;
         font-size: 10px;
@@ -768,11 +829,6 @@ visited {
         padding-right: 15px;
     }
 
-    .carousel-inner .image-size {
-        height: 700px;
-        width: 100%;
-    }
-
     .jumbotron h1 {
         margin-bottom: -3px;
         font-size: 45px;
@@ -787,58 +843,6 @@ visited {
     .jumbotron .desc {
         font-size: 18px;
         margin-top: 35px;
-    }
-
-    .col-satu .desc {
-        font-size: 20px;
-        margin-top: 30px;
-    }
-
-    .col-satu h1 {
-        font-size: 36px;
-    }
-
-    .col-satu a p {
-        margin-top: 40px;
-    }
-
-    .col-dua img {
-        height: 450px;
-    }
-
-    .container-three .card-right .card-two {
-        display: none;
-    }
-    
-    .container-three {
-        display: flex;
-    }
-
-    .container-three .card-left {
-        width: 70%;
-    }
-
-    .container-three .card-right {
-        width: 30%;
-        margin-left: 30px;
-        margin-top: 0;
-    }
-
-    .card-right img {
-        max-height: 200px;
-    }
-
-    .card-left .card-body {
-        min-height: 170px;
-    }
-
-    .card-right .card-text{
-        margin-bottom: 50px;
-    }
-
-    .container-three h3 {
-        text-align: start;
-        font-size: 22px;
     }
 
     .text-muted {
@@ -950,9 +954,9 @@ visited {
         height: 385px;
     }
 
-    .card-right img {
+    /* .card-right img {
         max-height: 300px;
-    }
+    } */
 
     .card-right .card-text {
         margin-bottom: 80px;

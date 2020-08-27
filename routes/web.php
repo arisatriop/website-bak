@@ -98,6 +98,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/admin-gallery-album', 'AlbumController@index');
     Route::post('/admin-gallery-album/create', 'AlbumController@create');
+    Route::post('/admin-gallery-album/add', 'AlbumController@add');
     Route::get('/admin-gallery-album/delete/{id}/{album_name}', 'AlbumController@delete');
 
     Route::get('/admin-panduan', 'PanduanController@index');

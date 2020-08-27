@@ -1,8 +1,10 @@
+
+
 .d-flex {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
-}
+} 
 
 .pl-4,
 .px-4 {
@@ -159,3 +161,22 @@
 .testimony-wrap .position {
     color: grey;
 }
+ 
+/* Responsive Breakpoint */
+@media (min-width: 576px) {
+    .img-size {
+        height: 200px;
+    }
+
+    .card-deck-size {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .img-size {
+        height: 250px;
+    }
+}
+
+

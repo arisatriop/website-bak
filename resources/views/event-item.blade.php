@@ -1,6 +1,8 @@
 @extends('layout.app2')
 
-@section('title', 'BAK - Event')
+@section('title')
+    {{ $event->title }}
+@endsection
 
 @section('page-title','Dashboard')
     
@@ -14,8 +16,8 @@
 					<p class="text-muted">BAK <span class="mx-1">/</span> Artikel dan Konten</p>
 					<div class="d-flex">
 						<p class="text-muted mx-1 m-lb">Follow us on:</p>
-						<img class="mx-1" src="{{ asset('assets/img/ig.png') }}" width="45" height="45">
-						<img class="mx-1" src="{{ asset('assets/img/line.png') }}" width="45" height="45">
+						<a href="https://www.instagram.com/bak.uii/" target="_blank"><img class="mx-1" src="{{ asset('assets/img/ig.png') }}" width="45" height="45"></a>
+						<a href="https://www.instagram.com/bak.uii/" target="_blank"><img class="mx-1" src="{{ asset('assets/img/line.png') }}" width="45" height="45"></a>
 					</div>
 				</div>
 				<h3 class="mt-5 font-weight-bold" style="color: rgb(139,0,0);">{{ $event->title }}</h3>
@@ -33,10 +35,11 @@
 					<a href="/article-item/{{$item->id}}" class="text-decoration-none" style="color: black">
 						<div class="row py-0 mb-2">
 							<div class="col-4">
-								<img src="{{ asset('assets/img/1.jpg') }}" class="img-fluid rounded" alt="Responsive image">
+								<img src="{{ asset('uploads/article_event/'. $item->image) }}" class="img-fluid rounded" alt="Responsive image">
 							</div>
 							<div class="col-7 p-0 my-0">
-								<p class="my-0 py-0">{{ substr($item->title, 0, 65) }}</p>
+								<p class="my-0 py-0 m-list-d">{{ substr($item->title, 0, 65) }}...</p>
+								<p class="my-0 py-0 m-list-m">{{ substr($item->title, 0, 50) }}...</p>
 								<p class="my-0 py-0"><small class="text-muted">Last updated <span>{{ $item->date }}</span></small></p>
 							</div>
 						</div>
