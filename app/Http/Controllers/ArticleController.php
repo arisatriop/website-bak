@@ -58,11 +58,13 @@ class ArticleController extends Controller
     public function update(Request $request, $id) 
     {
         $article = Article::find($id);
+        $tempImage = $article->image;
+
         $article->title = $request->input('title');
         $article->author = $request->input('author');
         $article->tanggal = $request->input('tanggal');
         $article->image_caption = $request->input('image_caption');
-        // $article->image = $request->input('image');
+        $article->image = $request->input('image');
         $article->content = $request->input('content');
         // $article->content2 = $request->input('content2');
         // $article->content3 = $request->input('content3');
@@ -78,16 +80,16 @@ class ArticleController extends Controller
         }
         $article->date = Carbon::now();
 
-        // if ($request->hasFile('image')) {
-        //     $file = $request->file('image');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = rand(0, 99999999) . '.' . $extension;
-        //     $file->move('uploads/article_event/', $filename);
-        //     $article->image = $filename;
-        // } else {
-        //     $article->image = '';
-        //     return redirect('/admin-article')->with('gagal', 'data tidak boleh kosong');
-        // }
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(0, 99999999) . '.' . $extension;
+            $file->move('uploads/article_event/', $filename);
+            $article->image = $filename;
+        } else {
+            $article->image = $tempImage;
+            // return redirect('/admin-article')->with('gagal', 'data tidak boleh kosong');
+        }
 
         $article->save();
         return redirect('/admin-article')->with('sukses_update', 'Artikel berhasil diupdate');

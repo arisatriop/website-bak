@@ -43,23 +43,25 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $event = Event::find($id);
+        $tempImage = $event->image;
+
         $event->title = $request->input('title');
-        // $event->image = $request->input('image');
+        $event->image = $request->input('image');
         $event->column6 = $request->input('column6');
         $event->column7 = $request->input('column7');
         $event->description = $request->input('description');
         $event->date = Carbon::now();
 
-        // if ($request->hasFile('image')) {
-        //     $file = $request->file('image');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = rand(0, 99999999) . '.' . $extension;
-        //     $file->move('uploads/article_event/', $filename);
-        //     $event->image = $filename;
-        // } else {
-        //     $event->image = '';
-        //     return redirect('/admin-event')->with('gagal', 'data tidak boleh kosong');
-        // }
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(0, 99999999) . '.' . $extension;
+            $file->move('uploads/article_event/', $filename);
+            $event->image = $filename;
+        } else {
+            $event->image = $tempImage;
+            // return redirect('/admin-event')->with('gagal', 'data tidak boleh kosong');
+        }
 
         $event->save();
         return redirect('/admin-event')->with('sukses_update', 'Event berhasil diupdate');

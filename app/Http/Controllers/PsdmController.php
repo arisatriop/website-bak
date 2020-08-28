@@ -41,6 +41,8 @@ class PsdmController extends Controller
     public function update(Request $request, $id)
     {
         $person = Psdm::find($id);
+        $tempImage = $person->image;
+
         $person->name = $request->input('name');
         $person->position = $request->input('position');
         $person->faculty = $request->input('faculty');
@@ -54,8 +56,7 @@ class PsdmController extends Controller
             $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
-            return $request;
-            $person->image = '';
+            $person->image = $tempImage;
         }
 
         $person->save();

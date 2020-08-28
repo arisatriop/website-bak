@@ -276,7 +276,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1" class="pl-1">Avatar</label>
-                                                <input class="mt-n2 col-12 m-auto" name="avatar" type="file" required>   
+                                                <input class="mt-n2 col-12 m-auto" name="avatar" type="file">   
                                             </div>
                                         </div>
                                         <div class="modal-footer">

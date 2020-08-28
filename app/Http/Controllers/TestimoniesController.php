@@ -44,6 +44,8 @@ class TestimoniesController extends Controller
     public function update(Request $request, $id)
     {
         $testimonials = Testimony::find($id);
+        $tempImage = $testimonials->avatar;
+
         $testimonials->name = $request->input('name');
         $testimonials->position = $request->input('position');
         $testimonials->quote = $request->input('quote');
@@ -56,9 +58,7 @@ class TestimoniesController extends Controller
             $file->move('uploads/home_images/', $filename);
             $testimonials->avatar = $filename;
         } else {
-            $testimonials->avatar = '';
-            // return $request;
-            dd($testimonials);
+            $testimonials->avatar = $tempImage;
         }
 
         $testimonials->save();

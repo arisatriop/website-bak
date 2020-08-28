@@ -40,6 +40,8 @@ class AuditController extends Controller
     public function update(Request $request, $id)
     {
         $person = Audit::find($id);
+        $tempImage = $person->image;
+
         $person->name = $request->input('name');
         $person->position = $request->input('position');
         $person->faculty = $request->input('faculty');
@@ -53,8 +55,7 @@ class AuditController extends Controller
             $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
-            return $request;
-            $person->image = '';
+            $person->image = $tempImage;
         }
 
         $person->save();

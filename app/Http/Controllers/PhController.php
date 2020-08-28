@@ -92,6 +92,7 @@ class PhController extends Controller
     public function update(Request $request, $id)
     {
         $person = Ph::find($id);
+        $tempImage = $person->image;
 
         $person->name = $request->input('name');
         $person->position = $request->input('position');
@@ -106,9 +107,11 @@ class PhController extends Controller
             $file->move('uploads/staff_images/', $filename);
             $person->image = $filename;
         } else {
-            $person->image = '';
+            // $person->image = '';
             // return "GAGAL MEMPERBAHARUI DATA! GAMBAR TIDAK BOLEH KOSONG";
-            return redirect('/admin-ph')->with('sukses', 'GAGAL');
+            // return redirect('/admin-ph')->with('sukses', 'GAGAL');
+
+            $person->image = $tempImage;
         }
 
         $person->save();

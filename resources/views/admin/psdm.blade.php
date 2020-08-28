@@ -130,7 +130,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlFile1">Avatar</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
